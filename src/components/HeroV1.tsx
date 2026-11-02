@@ -55,7 +55,7 @@ export const HeroV1: React.FC<HeroV1Props> = ({
   };
 
   return (
-    <section className="relative bg-[#FFF8F0] pt-8 pb-16 lg:pt-12 lg:pb-20 border-b border-amber-900/10">
+    <section className="relative bg-[#FFF8F0] dark:bg-[#0F0F12] pt-8 pb-16 lg:pt-12 lg:pb-20 border-b border-amber-900/10 dark:border-zinc-800 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           {/* Left Column: Modern High-Impact Layout */}
@@ -67,7 +67,7 @@ export const HeroV1: React.FC<HeroV1Props> = ({
             </div>
 
             {/* Modern Bold Headline */}
-            <h1 className="font-heading text-4xl sm:text-5xl lg:text-[3.6rem] font-black tracking-tight text-zinc-900 leading-[1.08]">
+            <h1 className="font-heading text-4xl sm:text-5xl lg:text-[3.6rem] font-black tracking-tight text-zinc-900 dark:text-white leading-[1.08]">
               <span className="text-[#FA5C38]">
                 {h1.titleHighlight[language]}
               </span>{' '}
@@ -76,7 +76,7 @@ export const HeroV1: React.FC<HeroV1Props> = ({
             </h1>
 
             {/* Modern Clean Subtitle */}
-            <p className="text-base sm:text-lg text-zinc-600 max-w-2xl font-normal leading-relaxed">
+            <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl font-normal leading-relaxed">
               {h1.description[language]}
             </p>
 
@@ -85,7 +85,7 @@ export const HeroV1: React.FC<HeroV1Props> = ({
               {(h1.features[language] || []).map((feat, idx) => (
                 <div
                   key={idx}
-                  className="flex items-center gap-2 text-xs font-bold text-zinc-800 bg-white px-3 py-2.5 rounded-xl border border-amber-900/10 shadow-xs"
+                  className="flex items-center gap-2 text-xs font-bold text-zinc-800 dark:text-zinc-200 bg-white dark:bg-[#18181D] px-3 py-2.5 rounded-xl border border-amber-900/10 dark:border-zinc-800 shadow-xs"
                 >
                   <Check className="w-3.5 h-3.5 text-[#FA5C38] shrink-0" />
                   <span className="truncate">{feat}</span>
@@ -94,15 +94,15 @@ export const HeroV1: React.FC<HeroV1Props> = ({
             </div>
 
             {/* Search Availability Box */}
-            <div className="bg-white p-5 sm:p-6 rounded-2xl shadow-md border border-amber-900/10 mt-3">
-              <div className="flex flex-wrap items-center justify-between gap-2 pb-3 mb-4 border-b border-zinc-100">
+            <div className="bg-white dark:bg-[#18181D] p-5 sm:p-6 rounded-2xl shadow-md border border-amber-900/10 dark:border-zinc-800 mt-3">
+              <div className="flex flex-wrap items-center justify-between gap-2 pb-3 mb-4 border-b border-zinc-100 dark:border-zinc-800">
                 <div className="flex items-center gap-2">
                   <Building2 className="w-4 h-4 text-[#FA5C38]" />
-                  <h3 className="font-heading font-extrabold text-sm sm:text-base text-zinc-900">
+                  <h3 className="font-heading font-extrabold text-sm sm:text-base text-zinc-900 dark:text-white">
                     {labels.searchTitle}
                   </h3>
                 </div>
-                <span className="text-xs font-bold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
+                <span className="text-xs font-bold text-emerald-800 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950/50 px-2.5 py-1 rounded-full border border-emerald-200 dark:border-emerald-800/40">
                   {h1.availabilityTag[language]}
                 </span>
               </div>
@@ -112,14 +112,14 @@ export const HeroV1: React.FC<HeroV1Props> = ({
                 className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs"
               >
                 <div>
-                  <label className="block font-bold text-zinc-600 mb-1 flex items-center gap-1">
+                  <label className="block font-bold text-zinc-600 dark:text-zinc-400 mb-1 flex items-center gap-1">
                     <MapPin className="w-3.5 h-3.5 text-[#FA5C38]" />
                     {labels.cityLabel}
                   </label>
                   <select
                     value={city}
                     onChange={(e) => setCity(e.target.value)}
-                    className="w-full bg-zinc-50 border border-zinc-200 text-zinc-900 text-xs font-semibold rounded-xl p-2.5 focus:border-[#FA5C38] outline-none"
+                    className="w-full bg-zinc-50 dark:bg-[#111115] border border-zinc-200 dark:border-zinc-700 text-zinc-900 dark:text-white text-xs font-semibold rounded-xl p-2.5 focus:border-[#FA5C38] outline-none"
                   >
                     <option value="All">All Locations (Torino)</option>
                     <option value="Torino">Viale della Rimembranza 2</option>
@@ -127,14 +127,14 @@ export const HeroV1: React.FC<HeroV1Props> = ({
                 </div>
 
                 <div>
-                  <label className="block font-bold text-zinc-600 mb-1 flex items-center gap-1">
+                  <label className="block font-bold text-zinc-600 dark:text-zinc-400 mb-1 flex items-center gap-1">
                     <Building2 className="w-3.5 h-3.5 text-[#FA5C38]" />
                     {labels.typeLabel}
                   </label>
                   <select
                     value={roomType}
                     onChange={(e) => setRoomType(e.target.value)}
-                    className="w-full bg-zinc-50 border border-zinc-200 text-zinc-900 text-xs font-semibold rounded-xl p-2.5 focus:border-[#FA5C38] outline-none"
+                    className="w-full bg-zinc-50 dark:bg-[#111115] border border-zinc-200 dark:border-zinc-700 text-zinc-900 dark:text-white text-xs font-semibold rounded-xl p-2.5 focus:border-[#FA5C38] outline-none"
                   >
                     <option value="All">All Room Types</option>
                     <option value="single_deluxe">Single Deluxe Suite</option>
@@ -145,14 +145,14 @@ export const HeroV1: React.FC<HeroV1Props> = ({
                 </div>
 
                 <div>
-                  <label className="block font-bold text-zinc-600 mb-1 flex items-center gap-1">
+                  <label className="block font-bold text-zinc-600 dark:text-zinc-400 mb-1 flex items-center gap-1">
                     <Calendar className="w-3.5 h-3.5 text-[#FA5C38]" />
                     {labels.dateLabel}
                   </label>
                   <select
                     value={moveInDate}
                     onChange={(e) => setMoveInDate(e.target.value)}
-                    className="w-full bg-zinc-50 border border-zinc-200 text-zinc-900 text-xs font-semibold rounded-xl p-2.5 focus:border-[#FA5C38] outline-none"
+                    className="w-full bg-zinc-50 dark:bg-[#111115] border border-zinc-200 dark:border-zinc-700 text-zinc-900 dark:text-white text-xs font-semibold rounded-xl p-2.5 focus:border-[#FA5C38] outline-none"
                   >
                     <option value="Sept 2025">September 2025</option>
                     <option value="Oct 2025">October 2025</option>
@@ -163,7 +163,7 @@ export const HeroV1: React.FC<HeroV1Props> = ({
                 <div className="flex items-end">
                   <button
                     type="submit"
-                    className="w-full bg-[#FA5C38] hover:bg-[#E04B28] text-white font-extrabold text-xs py-2.5 px-3 rounded-xl transition-all shadow-md shadow-orange-500/20 flex items-center justify-center gap-1.5 active:scale-98"
+                    className="w-full bg-[#FA5C38] hover:bg-[#E04B28] text-white font-extrabold text-xs py-2.5 px-3 rounded-xl transition-all shadow-md shadow-orange-500/20 flex items-center justify-center gap-1.5 active:scale-98 cursor-pointer"
                   >
                     <Search className="w-3.5 h-3.5" />
                     <span>{labels.searchBtn}</span>
@@ -176,7 +176,7 @@ export const HeroV1: React.FC<HeroV1Props> = ({
             <div className="flex flex-wrap items-center gap-4 pt-1">
               <button
                 onClick={onOpenBookingModal}
-                className="bg-[#FA5C38] hover:bg-[#E04B28] text-white font-extrabold px-6 py-3.5 rounded-full text-xs sm:text-sm shadow-md shadow-orange-500/25 flex items-center gap-2 transition-all hover:scale-[1.02] active:scale-98"
+                className="bg-[#FA5C38] hover:bg-[#E04B28] text-white font-extrabold px-6 py-3.5 rounded-full text-xs sm:text-sm shadow-md shadow-orange-500/25 flex items-center gap-2 transition-all hover:scale-[1.02] active:scale-98 cursor-pointer"
               >
                 <span>{labels.exploreBtn}</span>
                 <ArrowRight className="w-4 h-4 text-[#FFC83B]" />
@@ -184,7 +184,7 @@ export const HeroV1: React.FC<HeroV1Props> = ({
 
               <button
                 onClick={onOpenVideoModal}
-                className="bg-white hover:bg-zinc-50 text-zinc-900 font-extrabold px-5 py-3.5 rounded-full text-xs sm:text-sm border border-zinc-300 flex items-center gap-2.5 transition-all shadow-xs"
+                className="bg-white dark:bg-[#18181D] hover:bg-zinc-50 dark:hover:bg-zinc-800 text-zinc-900 dark:text-white font-extrabold px-5 py-3.5 rounded-full text-xs sm:text-sm border border-zinc-300 dark:border-zinc-700 flex items-center gap-2.5 transition-all shadow-xs cursor-pointer"
               >
                 <div className="w-6 h-6 rounded-full bg-[#FFC83B] flex items-center justify-center text-zinc-950 font-bold">
                   <Play className="w-3 h-3 fill-current ml-0.5 text-zinc-950" />
@@ -196,7 +196,7 @@ export const HeroV1: React.FC<HeroV1Props> = ({
 
           {/* Right Column: Modern Image Card with Orange & Yellow accents */}
           <div className="lg:col-span-5 relative mt-4 lg:mt-0">
-            <div className="relative rounded-3xl overflow-hidden border-4 border-white shadow-xl bg-zinc-900 group">
+            <div className="relative rounded-3xl overflow-hidden border-4 border-white dark:border-zinc-800 shadow-xl bg-zinc-900 group">
               <img
                 src={h1.heroImage}
                 alt="Studentato Emilia Residence Torino"
@@ -205,16 +205,16 @@ export const HeroV1: React.FC<HeroV1Props> = ({
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
 
               {/* Bottom Plaque: Orange & Yellow Brand Accents */}
-              <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-4 rounded-2xl border border-white/50 shadow-lg">
+              <div className="absolute bottom-4 left-4 right-4 bg-white/95 dark:bg-[#18181D]/95 backdrop-blur-md p-4 rounded-2xl border border-white/50 dark:border-zinc-700/60 shadow-lg">
                 <div className="flex items-center justify-between gap-3">
                   <div>
                     <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#FA5C38] block">
                       {h1.cardEyebrow}
                     </span>
-                    <h4 className="font-heading font-black text-zinc-900 text-base">
+                    <h4 className="font-heading font-black text-zinc-900 dark:text-white text-base">
                       {h1.cardTitle}
                     </h4>
-                    <p className="text-xs text-zinc-500 flex items-center gap-1 mt-0.5 font-medium">
+                    <p className="text-xs text-zinc-500 dark:text-zinc-400 flex items-center gap-1 mt-0.5 font-medium">
                       <MapPin className="w-3.5 h-3.5 text-[#FA5C38]" /> {h1.cardSubtitle}
                     </p>
                   </div>
@@ -228,7 +228,7 @@ export const HeroV1: React.FC<HeroV1Props> = ({
               {/* Play Video Trigger */}
               <button
                 onClick={onOpenVideoModal}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-[#FA5C38] hover:bg-[#E04B28] text-white flex items-center justify-center shadow-xl transition-transform hover:scale-110 active:scale-95"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-[#FA5C38] hover:bg-[#E04B28] text-white flex items-center justify-center shadow-xl transition-transform hover:scale-110 active:scale-95 cursor-pointer"
                 aria-label="Play virtual residence tour video"
               >
                 <Play className="w-7 h-7 fill-current ml-1 text-white" />

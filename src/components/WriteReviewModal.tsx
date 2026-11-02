@@ -63,27 +63,27 @@ export const WriteReviewModal: React.FC<WriteReviewModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-950/70 backdrop-blur-2xs">
-      <div className="bg-white rounded-lg max-w-lg w-full p-6 sm:p-8 relative shadow-xl border border-stone-300">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-xs">
+      <div className="bg-white dark:bg-[#141418] rounded-3xl max-w-lg w-full p-6 sm:p-8 relative shadow-2xl border border-amber-900/10 dark:border-zinc-800 transition-colors">
         
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 p-2 rounded-md bg-stone-100 text-stone-700 hover:bg-stone-200 transition-colors"
+          className="absolute top-5 right-5 p-2 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 hover:bg-[#FA5C38] hover:text-white dark:hover:bg-[#FA5C38] dark:hover:text-white transition-colors cursor-pointer"
           aria-label="Close modal"
         >
           <X className="w-4 h-4" />
         </button>
 
-        <h3 className="font-serif text-2xl font-semibold text-stone-900">{content.title}</h3>
-        <p className="text-xs text-stone-500 mb-6 mt-1">{content.subtitle}</p>
+        <h3 className="font-heading font-black text-2xl text-zinc-900 dark:text-white">{content.title}</h3>
+        <p className="text-xs text-zinc-500 dark:text-zinc-400 mb-6 mt-1">{content.subtitle}</p>
 
         {submitted ? (
-          <div className="bg-emerald-50 border border-emerald-200 text-emerald-900 p-6 rounded-md text-center space-y-3">
-            <Check className="w-8 h-8 text-emerald-600 mx-auto" />
-            <p className="font-medium text-xs">{content.successMsg}</p>
+          <div className="bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 text-emerald-900 dark:text-emerald-200 p-6 rounded-2xl text-center space-y-3">
+            <Check className="w-8 h-8 text-emerald-600 dark:text-emerald-400 mx-auto" />
+            <p className="font-bold text-xs">{content.successMsg}</p>
             <button
               onClick={onClose}
-              className="bg-emerald-800 text-white font-medium text-xs px-5 py-2.5 rounded-md"
+              className="bg-emerald-800 hover:bg-emerald-900 text-white font-extrabold text-xs px-5 py-2.5 rounded-xl cursor-pointer"
             >
               Close
             </button>
@@ -91,7 +91,7 @@ export const WriteReviewModal: React.FC<WriteReviewModalProps> = ({
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4 text-xs">
             <div>
-              <label className="block font-medium text-stone-700 mb-1">
+              <label className="block font-bold text-zinc-700 dark:text-zinc-300 mb-1">
                 {content.nameLabel}
               </label>
               <input
@@ -100,13 +100,13 @@ export const WriteReviewModal: React.FC<WriteReviewModalProps> = ({
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="e.g. Alessandro Rossi"
-                className="w-full bg-stone-50 border border-stone-300 text-stone-900 text-xs font-medium rounded-md p-2.5 focus:border-[#E04D26] outline-none"
+                className="w-full bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 text-zinc-900 dark:text-white text-xs font-semibold rounded-xl p-2.5 focus:border-[#FA5C38] outline-none"
               />
             </div>
 
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className="block font-medium text-stone-700 mb-1">
+                <label className="block font-bold text-zinc-700 dark:text-zinc-300 mb-1">
                   {content.uniLabel}
                 </label>
                 <input
@@ -115,18 +115,18 @@ export const WriteReviewModal: React.FC<WriteReviewModalProps> = ({
                   value={university}
                   onChange={(e) => setUniversity(e.target.value)}
                   placeholder="e.g. PoliTO"
-                  className="w-full bg-stone-50 border border-stone-300 text-stone-900 text-xs font-medium rounded-md p-2.5 focus:border-[#E04D26] outline-none"
+                  className="w-full bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 text-zinc-900 dark:text-white text-xs font-semibold rounded-xl p-2.5 focus:border-[#FA5C38] outline-none"
                 />
               </div>
 
               <div>
-                <label className="block font-medium text-stone-700 mb-1">
+                <label className="block font-bold text-zinc-700 dark:text-zinc-300 mb-1">
                   {content.cityLabel}
                 </label>
                 <select
                   value={city}
                   onChange={(e) => setCity(e.target.value)}
-                  className="w-full bg-stone-50 border border-stone-300 text-stone-900 text-xs font-medium rounded-md p-2.5 focus:border-[#E04D26] outline-none"
+                  className="w-full bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 text-zinc-900 dark:text-white text-xs font-semibold rounded-xl p-2.5 focus:border-[#FA5C38] outline-none"
                 >
                   <option value="Torino">Torino (Rimembranza 2)</option>
                 </select>
@@ -134,7 +134,7 @@ export const WriteReviewModal: React.FC<WriteReviewModalProps> = ({
             </div>
 
             <div>
-              <label className="block font-medium text-stone-700 mb-1">
+              <label className="block font-bold text-zinc-700 dark:text-zinc-300 mb-1">
                 {content.ratingLabel}
               </label>
               <div className="flex gap-1.5">
@@ -143,11 +143,11 @@ export const WriteReviewModal: React.FC<WriteReviewModalProps> = ({
                     type="button"
                     key={starVal}
                     onClick={() => setRating(starVal)}
-                    className="p-1 text-amber-500 rounded"
+                    className="p-1 rounded cursor-pointer"
                   >
                     <Star
                       className={`w-5 h-5 ${
-                        starVal <= rating ? 'fill-current text-amber-500' : 'text-stone-300'
+                        starVal <= rating ? 'fill-current text-[#FFC83B]' : 'text-zinc-300 dark:text-zinc-700'
                       }`}
                     />
                   </button>
@@ -156,7 +156,7 @@ export const WriteReviewModal: React.FC<WriteReviewModalProps> = ({
             </div>
 
             <div>
-              <label className="block font-medium text-stone-700 mb-1">
+              <label className="block font-bold text-zinc-700 dark:text-zinc-300 mb-1">
                 {content.commentLabel}
               </label>
               <textarea
@@ -165,13 +165,13 @@ export const WriteReviewModal: React.FC<WriteReviewModalProps> = ({
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
                 placeholder="Share details about your room, studying atmosphere, and student life in Torino..."
-                className="w-full bg-stone-50 border border-stone-300 text-stone-900 text-xs font-medium rounded-md p-2.5 focus:border-[#E04D26] outline-none"
+                className="w-full bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 text-zinc-900 dark:text-white text-xs font-semibold rounded-xl p-2.5 focus:border-[#FA5C38] outline-none"
               />
             </div>
 
             <button
               type="submit"
-              className="w-full bg-[#E04D26] hover:bg-[#CC3E18] text-white font-semibold text-xs py-3 px-4 rounded-md transition-colors shadow-2xs flex items-center justify-center gap-2"
+              className="w-full bg-[#FA5C38] hover:bg-[#E04B28] text-white font-extrabold text-xs py-3 px-4 rounded-xl transition-all shadow-md shadow-orange-500/20 flex items-center justify-center gap-2 cursor-pointer active:scale-98"
             >
               <Send className="w-3.5 h-3.5" />
               <span>{content.submitBtn}</span>

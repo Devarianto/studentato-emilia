@@ -101,14 +101,14 @@ export const Footer: React.FC<FooterProps> = ({ language }) => {
             </h4>
             <ul className="space-y-2.5 text-xs text-stone-300">
               <li className="flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-[#FFC83B] shrink-0" />
-                <a href={`tel:${contact.phone}`} className="hover:text-[#FFC83B] transition-colors">
+                <Phone className="w-3.5 h-3.5 text-[#FA5C38] shrink-0" />
+                <a href={`tel:${contact.phone}`} className="hover:text-white transition-colors">
                   {contact.phone}
                 </a>
               </li>
               <li className="flex items-center gap-2">
-                <Mail className="w-3.5 h-3.5 text-[#FFC83B] shrink-0" />
-                <a href={`mailto:${contact.email}`} className="hover:text-[#FFC83B] transition-colors">
+                <Mail className="w-3.5 h-3.5 text-[#FA5C38] shrink-0" />
+                <a href={`mailto:${contact.email}`} className="hover:text-white transition-colors">
                   {contact.email}
                 </a>
               </li>

@@ -31,6 +31,15 @@ function MainAppContent() {
   } = useCMS();
 
   const [language, setLanguage] = useState<Language>('EN');
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('studentato_theme_mode');
+      if (saved) return saved === 'dark';
+      return window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+    return false;
+  });
+
   const [searchFilter, setSearchFilter] = useState<SearchFilterState>({
     city: 'All',
     roomType: 'All',
@@ -47,6 +56,20 @@ function MainAppContent() {
       setLanguage(cmsData.theme.defaultLanguage);
     }
   }, [cmsData.theme.defaultLanguage]);
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('studentato_theme_mode', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('studentato_theme_mode', 'light');
+    }
+  }, [isDarkMode]);
+
+  const toggleDarkMode = () => {
+    setIsDarkMode((prev) => !prev);
+  };
 
   // If user is on /admin (or /wp-admin), render the standalone CMS Portal (Login or Dashboard)
   if (activeRoute === 'admin') {
@@ -83,14 +106,14 @@ function MainAppContent() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FFF8F0] text-zinc-900 font-sans selection:bg-[#FFC83B] selection:text-zinc-950">
+    <div className="min-h-screen bg-[#FFF8F0] dark:bg-[#0F0F12] text-zinc-900 dark:text-zinc-100 font-sans selection:bg-[#FFC83B] selection:text-zinc-950 transition-colors duration-200">
       {/* WordPress-style Top Admin Bar — ONLY visible if an admin is currently logged in */}
       {isAuthenticated && (
         <div className="bg-[#1C1917] text-white text-xs px-4 py-1.5 flex items-center justify-between border-b border-stone-700">
           <div className="flex items-center gap-3">
             <button
               onClick={() => navigateTo('admin')}
-              className="inline-flex items-center gap-1.5 font-bold text-[#E6AA38] hover:underline"
+              className="inline-flex items-center gap-1.5 font-bold text-[#FFC83B] hover:underline"
             >
               <LayoutDashboard className="w-3.5 h-3.5" />
               <span>Buka Dashboard CMS (/admin)</span>
@@ -111,14 +134,21 @@ function MainAppContent() {
         </div>
       )}
 
-      {/* Utility Top Bar */}
+      {/* Utility Top Bar with Language and Dark Mode Toggle */}
       <TopUtilityBar
         language={language}
         setLanguage={setLanguage}
+        isDarkMode={isDarkMode}
+        toggleDarkMode={toggleDarkMode}
       />
 
       {/* Sticky Main Header */}
-      <Header language={language} onOpenBookingModal={handleOpenBookingModal} />
+      <Header
+        language={language}
+        onOpenBookingModal={handleOpenBookingModal}
+        isDarkMode={isDarkMode}
+        toggleDarkMode={toggleDarkMode}
+      />
 
       {/* Main Public Website Content (V1 Fixed Version) */}
       <main>

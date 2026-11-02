@@ -35,7 +35,7 @@ export const SpecialOffersSection: React.FC<SpecialOffersSectionProps> = ({ lang
   };
 
   return (
-    <section id="promotions" className="py-16 sm:py-20 bg-[#FFF8F0] border-b border-amber-900/10">
+    <section id="promotions" className="py-16 sm:py-20 bg-[#FFF8F0] dark:bg-[#0F0F12] border-b border-amber-900/10 dark:border-zinc-800 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Vibrant Orange & Yellow Academic Banner */}
         <div className="bg-[#FA5C38] rounded-3xl p-6 sm:p-12 text-white shadow-xl relative overflow-hidden">
@@ -71,11 +71,11 @@ export const SpecialOffersSection: React.FC<SpecialOffersSectionProps> = ({ lang
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder={labels.emailPlaceholder}
-                    className="bg-white text-zinc-900 placeholder-zinc-400 px-4 py-3 rounded-xl text-xs font-semibold outline-none flex-1 shadow-xs"
+                    className="bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white placeholder-zinc-400 dark:placeholder-zinc-500 border border-transparent dark:border-zinc-700 px-4 py-3 rounded-xl text-xs font-semibold outline-none flex-1 shadow-xs"
                   />
                   <button
                     type="submit"
-                    className="bg-[#FFC83B] hover:bg-[#eab308] text-zinc-950 font-black px-6 py-3 rounded-xl text-xs sm:text-sm shadow-md transition-all shrink-0 active:scale-98"
+                    className="bg-[#FFC83B] hover:bg-[#eab308] text-zinc-950 font-black px-6 py-3 rounded-xl text-xs sm:text-sm shadow-md transition-all shrink-0 active:scale-98 cursor-pointer"
                   >
                     {labels.submitBtn}
                   </button>

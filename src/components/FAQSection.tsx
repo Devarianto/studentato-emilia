@@ -33,7 +33,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ language }) => {
   };
 
   return (
-    <section id="faq" className="py-16 sm:py-24 bg-[#FFF8F0] border-b border-amber-900/10">
+    <section id="faq" className="py-16 sm:py-24 bg-[#FFF8F0] dark:bg-[#0F0F12] border-b border-amber-900/10 dark:border-zinc-800 transition-colors">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="space-y-3 mb-12 text-center max-w-2xl mx-auto">
@@ -41,11 +41,11 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ language }) => {
             <span>{content.eyebrow}</span>
           </div>
 
-          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight text-zinc-900">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight text-zinc-900 dark:text-white">
             {content.title}
           </h2>
 
-          <p className="text-sm sm:text-base text-zinc-600 leading-relaxed font-normal">
+          <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed font-normal">
             {content.subtitle}
           </p>
         </div>
@@ -57,14 +57,14 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ language }) => {
             return (
               <div
                 key={item.id}
-                className="bg-white rounded-2xl border border-amber-900/10 overflow-hidden shadow-xs transition-all"
+                className="bg-white dark:bg-[#18181D] rounded-2xl border border-amber-900/10 dark:border-zinc-800 overflow-hidden shadow-xs transition-all"
               >
                 <button
                   onClick={() => toggleAccordion(item.id)}
-                  className="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 hover:bg-orange-50/40 transition-colors outline-none"
+                  className="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 hover:bg-orange-50/40 dark:hover:bg-zinc-800/40 transition-colors outline-none cursor-pointer"
                   aria-expanded={isOpen}
                 >
-                  <span className="font-heading font-extrabold text-zinc-900 text-sm sm:text-base">
+                  <span className="font-heading font-extrabold text-zinc-900 dark:text-white text-sm sm:text-base">
                     {item.question[language]}
                   </span>
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-colors ${
@@ -79,7 +79,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ language }) => {
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 pb-6 sm:px-6 pt-1 text-xs sm:text-sm text-zinc-600 leading-relaxed border-t border-zinc-100">
+                  <div className="px-5 pb-6 sm:px-6 pt-1 text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed border-t border-zinc-100 dark:border-zinc-800">
                     {item.answer[language]}
                   </div>
                 )}

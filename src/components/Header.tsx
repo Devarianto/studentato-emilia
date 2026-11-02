@@ -1,14 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { Language } from '../types';
-import { Menu, X, ArrowRight } from 'lucide-react';
+import { Menu, X, ArrowRight, Sun, Moon } from 'lucide-react';
 import { Logo } from './Logo';
 
 interface HeaderProps {
   language: Language;
   onOpenBookingModal: () => void;
+  isDarkMode?: boolean;
+  toggleDarkMode?: () => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({ language, onOpenBookingModal }) => {
+export const Header: React.FC<HeaderProps> = ({
+  language,
+  onOpenBookingModal,
+  isDarkMode,
+  toggleDarkMode,
+}) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -59,8 +66,8 @@ export const Header: React.FC<HeaderProps> = ({ language, onOpenBookingModal }) 
     <header
       className={`sticky top-0 z-40 transition-all duration-200 ${
         isScrolled
-          ? 'bg-[#FFF8F0]/95 backdrop-blur-md py-3 border-b border-amber-900/10 shadow-xs'
-          : 'bg-[#FFF8F0] py-4 border-b border-amber-900/5'
+          ? 'bg-[#FFF8F0]/95 dark:bg-[#121215]/95 backdrop-blur-md py-3 border-b border-amber-900/10 dark:border-zinc-800 shadow-xs'
+          : 'bg-[#FFF8F0] dark:bg-[#0F0F12] py-4 border-b border-amber-900/5 dark:border-zinc-800/80'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -80,7 +87,7 @@ export const Header: React.FC<HeaderProps> = ({ language, onOpenBookingModal }) 
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-bold text-zinc-700 hover:text-[#FA5C38] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#FA5C38] hover:after:w-full after:transition-all"
+              className="text-sm font-bold text-zinc-700 dark:text-zinc-200 hover:text-[#FA5C38] dark:hover:text-[#FA5C38] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#FA5C38] hover:after:w-full after:transition-all"
             >
               {link.name}
             </a>
@@ -101,7 +108,7 @@ export const Header: React.FC<HeaderProps> = ({ language, onOpenBookingModal }) 
         {/* Mobile Hamburger Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden p-2 text-zinc-800 hover:text-[#FA5C38] rounded-lg"
+          className="lg:hidden p-2 text-zinc-800 dark:text-zinc-200 hover:text-[#FA5C38] rounded-lg"
           aria-label="Toggle navigation menu"
         >
           {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -110,26 +117,48 @@ export const Header: React.FC<HeaderProps> = ({ language, onOpenBookingModal }) 
 
       {/* Mobile Drawer Navigation */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#FFF8F0] border-b border-amber-900/10 px-5 pt-3 pb-6 space-y-4 shadow-xl">
+        <div className="lg:hidden bg-[#FFF8F0] dark:bg-[#141418] border-b border-amber-900/10 dark:border-zinc-800 px-5 pt-3 pb-6 space-y-4 shadow-xl">
           <nav className="flex flex-col space-y-1">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-3 py-2.5 rounded-xl text-base font-bold text-zinc-800 hover:bg-[#FA5C38]/10 hover:text-[#FA5C38] transition-colors"
+                className="px-3 py-2.5 rounded-xl text-base font-bold text-zinc-800 dark:text-zinc-200 hover:bg-[#FA5C38]/10 hover:text-[#FA5C38] transition-colors"
               >
                 {link.name}
               </a>
             ))}
           </nav>
-          <div className="pt-2 border-t border-amber-900/10">
+          {toggleDarkMode && (
+            <div className="pt-2 border-t border-amber-900/10 dark:border-zinc-800 flex items-center justify-between">
+              <span className="text-xs font-bold text-zinc-600 dark:text-zinc-400">Theme / Tampilan:</span>
+              <button
+                onClick={toggleDarkMode}
+                className="flex items-center gap-2 bg-zinc-200 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 px-3 py-1.5 rounded-xl text-xs font-extrabold cursor-pointer transition-colors"
+              >
+                {isDarkMode ? (
+                  <>
+                    <Sun className="w-3.5 h-3.5 text-[#FFC83B]" />
+                    <span>Light Mode</span>
+                  </>
+                ) : (
+                  <>
+                    <Moon className="w-3.5 h-3.5 text-zinc-600" />
+                    <span>Dark Mode</span>
+                  </>
+                )}
+              </button>
+            </div>
+          )}
+
+          <div className="pt-2 border-t border-amber-900/10 dark:border-zinc-800">
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
                 onOpenBookingModal();
               }}
-              className="w-full flex items-center justify-center gap-2 bg-[#FA5C38] hover:bg-[#E04B28] text-white font-extrabold text-sm py-3.5 rounded-xl transition-colors shadow-md"
+              className="w-full flex items-center justify-center gap-2 bg-[#FA5C38] hover:bg-[#E04B28] text-white font-extrabold text-sm py-3.5 rounded-xl transition-colors shadow-md cursor-pointer"
             >
               <span>{labels.cta}</span>
               <ArrowRight className="w-4 h-4 text-[#FFC83B]" />

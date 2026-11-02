@@ -31,12 +31,12 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ language }) => {
   };
 
   return (
-    <section id="about" className="py-16 sm:py-24 bg-[#FFF8F0] text-zinc-900 border-b border-amber-900/10">
+    <section id="about" className="py-16 sm:py-24 bg-[#FFF8F0] dark:bg-[#0F0F12] text-zinc-900 dark:text-zinc-100 border-b border-amber-900/10 dark:border-zinc-800 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column: Authentic Photography & Testimonial Plaque */}
           <div className="lg:col-span-5 space-y-5">
-            <div className="relative rounded-3xl overflow-hidden border-4 border-white shadow-xl bg-zinc-900">
+            <div className="relative rounded-3xl overflow-hidden border-4 border-white dark:border-zinc-800 shadow-xl bg-zinc-900">
               <img
                 src={about.image}
                 alt="Studentato Emilia Residence Community Lounge"
@@ -45,7 +45,7 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ language }) => {
             </div>
 
             {/* Endorsement Card with Warm Yellow & Orange Accents */}
-            <div className="bg-white p-6 rounded-2xl border-2 border-[#FFC83B] shadow-md">
+            <div className="bg-white dark:bg-[#18181D] p-6 rounded-2xl border-2 border-[#FFC83B] shadow-md">
               <div className="flex items-center gap-3 mb-2.5">
                 <div className="w-10 h-10 rounded-xl bg-[#FA5C38]/10 text-[#FA5C38] flex items-center justify-center font-bold">
                   <ShieldCheck className="w-6 h-6 text-[#FA5C38]" />
@@ -56,13 +56,13 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ language }) => {
                       <Star key={i} className="w-4 h-4 fill-current" />
                     ))}
                   </div>
-                  <h4 className="font-heading font-extrabold text-sm text-zinc-900 mt-0.5">
+                  <h4 className="font-heading font-extrabold text-sm text-zinc-900 dark:text-white mt-0.5">
                     {about.socialProofRating[language]}
                   </h4>
                 </div>
               </div>
 
-              <p className="text-xs text-zinc-600 mb-4 leading-relaxed font-medium">
+              <p className="text-xs text-zinc-600 dark:text-zinc-400 mb-4 leading-relaxed font-medium">
                 {about.socialProofDesc[language]}
               </p>
 
@@ -84,26 +84,26 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ language }) => {
               <span>{about.eyebrow[language]}</span>
             </div>
 
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-zinc-900 leading-[1.15]">
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-zinc-900 dark:text-white leading-[1.15]">
               {about.heading[language]}
             </h2>
 
-            <div className="space-y-4 text-zinc-600 text-sm sm:text-base leading-relaxed">
+            <div className="space-y-4 text-zinc-600 dark:text-zinc-300 text-sm sm:text-base leading-relaxed">
               <p>{about.paragraph1[language]}</p>
-              <p className="text-zinc-500">{about.paragraph2[language]}</p>
+              <p className="text-zinc-500 dark:text-zinc-400">{about.paragraph2[language]}</p>
             </div>
 
             {/* Metric Grid with Vibrant Orange Numbers */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-amber-900/10">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-amber-900/10 dark:border-zinc-800">
               {about.stats.map((st, i) => (
                 <div
                   key={i}
-                  className="bg-white p-4 rounded-2xl border border-amber-900/10 shadow-xs"
+                  className="bg-white dark:bg-[#18181D] p-4 rounded-2xl border border-amber-900/10 dark:border-zinc-800 shadow-xs"
                 >
                   <span className="font-heading text-2xl sm:text-3xl font-black text-[#FA5C38] block">
                     {st.val}
                   </span>
-                  <span className="text-xs font-bold text-zinc-700 block mt-1 leading-snug">
+                  <span className="text-xs font-bold text-zinc-700 dark:text-zinc-300 block mt-1 leading-snug">
                     {st.label[language]}
                   </span>
                 </div>
