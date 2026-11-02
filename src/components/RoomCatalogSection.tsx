@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Room, Language, SearchFilterState } from '../types';
-import { Star, MapPin, ArrowUpRight, Check, Filter, Info } from 'lucide-react';
+import { Star, MapPin, ArrowRight, Check, Filter, Info } from 'lucide-react';
 import { useCMS } from '../context/CMSContext';
 
 interface RoomCatalogSectionProps {
@@ -22,24 +22,24 @@ export const RoomCatalogSection: React.FC<RoomCatalogSectionProps> = ({
 
   const content = {
     EN: {
-      eyebrow: 'ACCOMMODATION DIRECTORY',
-      title: 'Curated Rooms & Private Suites',
-      seeAll: 'View All Typologies',
+      eyebrow: 'ACCOMMODATION CATALOG',
+      title: 'Our Premium Rooms',
+      seeAll: 'See all rooms',
       filterAllCities: 'All Locations',
-      filterAllTypes: 'All Typologies',
-      monthUnit: '/ month (all inclusive)',
-      detailBtn: 'View Room Details & Floorplan',
+      filterAllTypes: 'All Room Types',
+      monthUnit: '/ month',
+      detailBtn: 'Detail Room >',
       noResults: 'No rooms match your exact filter. Showing all available options below.',
       resetFilters: 'Reset Filters',
     },
     IT: {
       eyebrow: 'CATALOGO ALLOGGI',
-      title: 'Camere Curate & Suite Private',
-      seeAll: 'Vedi Tutte le Tipologie',
+      title: 'Le Nostre Camere',
+      seeAll: 'Vedi tutte le camere',
       filterAllCities: 'Tutte le Zone',
-      filterAllTypes: 'Tutte le Tipologie',
-      monthUnit: '/ mese (tutto incluso)',
-      detailBtn: 'Dettagli Camera & Planimetria',
+      filterAllTypes: 'Tutti i Tipi',
+      monthUnit: '/ mese',
+      detailBtn: 'Dettagli Stanza >',
       noResults:
         'Nessuna camera corrisponde esattamente ai filtri. Mostriamo tutte le opzioni disponibili.',
       resetFilters: 'Reimposta Filtri',
@@ -65,16 +65,15 @@ export const RoomCatalogSection: React.FC<RoomCatalogSectionProps> = ({
   const displayRooms = filteredRooms.length > 0 ? filteredRooms : roomsList;
 
   return (
-    <section id="rooms" className="py-16 sm:py-24 bg-[#FAF8F5] border-b border-stone-200">
+    <section id="rooms" className="py-16 sm:py-24 bg-[#FFF8F0] border-b border-amber-900/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
           <div>
-            <div className="inline-flex items-center gap-2 text-stone-500 text-[11px] font-semibold tracking-[0.18em] uppercase border-b border-stone-300 pb-1 mb-2">
-              <span className="w-1.5 h-1.5 bg-[#E04D26] rounded-xs" />
+            <div className="inline-flex items-center gap-2 bg-[#FA5C38]/10 text-[#FA5C38] px-3 py-1 rounded-full text-xs font-bold mb-2">
               <span>{content.eyebrow}</span>
             </div>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-stone-900 tracking-tight">
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-black text-zinc-900 tracking-tight">
               {content.title}
             </h2>
           </div>
@@ -86,29 +85,29 @@ export const RoomCatalogSection: React.FC<RoomCatalogSectionProps> = ({
               setSelectedCity('All');
               setSelectedType('All');
             }}
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#E04D26] hover:text-[#CC3E18] transition-colors"
+            className="inline-flex items-center gap-1.5 text-sm font-extrabold text-[#FA5C38] hover:text-[#E04B28] transition-colors"
           >
             <span>{content.seeAll}</span>
-            <ArrowUpRight className="w-4 h-4" />
+            <ArrowRight className="w-4 h-4" />
           </a>
         </div>
 
-        {/* Minimalist Architectural Filter Toolbar */}
-        <div className="bg-white p-3.5 rounded-lg border border-stone-200 shadow-2xs mb-8 flex flex-wrap items-center justify-between gap-3 text-xs">
-          <div className="flex items-center gap-2 font-medium text-stone-700">
-            <Filter className="w-3.5 h-3.5 text-[#E04D26]" />
-            <span>Filter by:</span>
+        {/* Filter Toolbar */}
+        <div className="bg-white p-4 rounded-2xl shadow-xs border border-amber-900/10 mb-8 flex flex-wrap items-center justify-between gap-3 text-xs">
+          <div className="flex items-center gap-2 font-bold text-zinc-700">
+            <Filter className="w-4 h-4 text-[#FA5C38]" />
+            <span>Filter Catalog:</span>
           </div>
 
-          <div className="flex flex-wrap gap-1.5">
+          <div className="flex flex-wrap gap-2">
             {['All', ...uniqueCities].map((cityOption) => (
               <button
                 key={cityOption}
                 onClick={() => setSelectedCity(cityOption)}
-                className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
+                className={`px-3.5 py-1.5 rounded-xl text-xs font-extrabold transition-all ${
                   selectedCity === cityOption
-                    ? 'bg-[#E04D26] text-white shadow-2xs'
-                    : 'bg-stone-100 text-stone-700 hover:bg-stone-200'
+                    ? 'bg-[#FA5C38] text-white shadow-xs'
+                    : 'bg-zinc-100 text-zinc-700 hover:bg-zinc-200'
                 }`}
               >
                 {cityOption === 'All' ? content.filterAllCities : `${cityOption} Residence`}
@@ -119,7 +118,7 @@ export const RoomCatalogSection: React.FC<RoomCatalogSectionProps> = ({
           <select
             value={selectedType}
             onChange={(e) => setSelectedType(e.target.value)}
-            className="bg-stone-50 text-stone-800 text-xs font-medium rounded-md px-3 py-1.5 border border-stone-300 focus:border-[#E04D26] outline-none"
+            className="bg-zinc-100 text-zinc-900 text-xs font-bold rounded-xl px-3 py-2 border border-zinc-200 outline-none"
           >
             <option value="All">{content.filterAllTypes}</option>
             <option value="single_deluxe">Single Deluxe</option>
@@ -130,9 +129,9 @@ export const RoomCatalogSection: React.FC<RoomCatalogSectionProps> = ({
         </div>
 
         {filteredRooms.length === 0 && (
-          <div className="bg-stone-100 border border-stone-300 p-4 rounded-md mb-8 flex items-center justify-between text-xs text-stone-700">
+          <div className="bg-amber-50 border border-amber-200 p-4 rounded-xl mb-8 flex items-center justify-between text-xs text-amber-900">
             <div className="flex items-center gap-2">
-              <Info className="w-4 h-4 text-stone-500 shrink-0" />
+              <Info className="w-4 h-4 text-amber-600 shrink-0" />
               <span>{content.noResults}</span>
             </div>
             <button
@@ -140,7 +139,7 @@ export const RoomCatalogSection: React.FC<RoomCatalogSectionProps> = ({
                 setSelectedCity('All');
                 setSelectedType('All');
               }}
-              className="font-semibold text-[#E04D26] underline"
+              className="font-extrabold text-[#FA5C38] underline"
             >
               {content.resetFilters}
             </button>
@@ -152,46 +151,46 @@ export const RoomCatalogSection: React.FC<RoomCatalogSectionProps> = ({
           {displayRooms.map((room) => (
             <div
               key={room.id}
-              className="bg-white rounded-lg overflow-hidden border border-stone-200 shadow-2xs hover:shadow-md transition-shadow duration-200 flex flex-col justify-between group"
+              className="bg-white rounded-3xl overflow-hidden border border-amber-900/10 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
                 {/* Photo frame */}
-                <div className="relative h-52 overflow-hidden bg-stone-900">
+                <div className="relative h-56 overflow-hidden bg-zinc-900">
                   <img
                     src={room.images[0]}
                     alt={room.name}
-                    className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
 
                   {room.badge && (
-                    <span className="absolute top-3 left-3 bg-white/95 text-stone-900 text-[10px] font-semibold uppercase px-2 py-0.5 rounded border border-stone-200">
+                    <span className="absolute top-3 left-3 bg-[#FFC83B] text-zinc-950 text-[10px] font-black uppercase px-2.5 py-1 rounded-full shadow-xs">
                       {room.badge}
                     </span>
                   )}
 
-                  <span className="absolute top-3 right-3 bg-stone-950/80 text-white text-[10px] font-medium px-2 py-0.5 rounded flex items-center gap-1">
-                    <MapPin className="w-3 h-3 text-[#E04D26]" /> {room.city}
+                  <span className="absolute top-3 right-3 bg-zinc-950/80 text-white text-[10px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1">
+                    <MapPin className="w-3 h-3 text-[#FA5C38]" /> {room.city}
                   </span>
 
-                  <div className="absolute bottom-3 left-3 bg-[#1C1917]/90 text-white px-2.5 py-1 rounded text-xs font-serif font-bold">
+                  <div className="absolute bottom-3 right-3 bg-[#FA5C38] text-white px-3 py-1 rounded-xl font-heading font-black text-sm shadow-md">
                     €{room.priceMonth}
-                    <span className="text-[10px] font-sans font-normal text-stone-300"> /mo</span>
+                    <span className="text-[10px] font-sans font-normal text-amber-100"> {content.monthUnit}</span>
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className="p-4 space-y-2.5">
-                  <div className="flex text-amber-500 text-xs">
+                <div className="p-5 space-y-2.5">
+                  <div className="flex text-[#FFC83B] text-xs">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-3 h-3 fill-current" />
+                      <Star key={i} className="w-3.5 h-3.5 fill-current" />
                     ))}
                   </div>
 
-                  <h3 className="font-serif font-semibold text-stone-900 text-base leading-snug group-hover:text-[#E04D26] transition-colors">
+                  <h3 className="font-heading font-black text-zinc-900 text-lg leading-snug group-hover:text-[#FA5C38] transition-colors">
                     {room.name}
                   </h3>
 
-                  <p className="text-xs text-stone-500 line-clamp-2 leading-relaxed">
+                  <p className="text-xs text-zinc-600 line-clamp-2 leading-relaxed">
                     {room.description[language]}
                   </p>
 
@@ -199,9 +198,9 @@ export const RoomCatalogSection: React.FC<RoomCatalogSectionProps> = ({
                     {room.features.slice(0, 3).map((feat, i) => (
                       <span
                         key={i}
-                        className="text-[10px] font-medium text-stone-700 bg-stone-100 px-2 py-0.5 rounded flex items-center gap-1"
+                        className="text-[10px] font-bold text-zinc-700 bg-zinc-100 px-2 py-0.5 rounded-md flex items-center gap-1"
                       >
-                        <Check className="w-2.5 h-2.5 text-[#E04D26]" /> {feat}
+                        <Check className="w-2.5 h-2.5 text-[#FA5C38]" /> {feat}
                       </span>
                     ))}
                   </div>
@@ -209,13 +208,13 @@ export const RoomCatalogSection: React.FC<RoomCatalogSectionProps> = ({
               </div>
 
               {/* Action Button */}
-              <div className="p-4 pt-0 border-t border-stone-100 mt-2">
+              <div className="p-5 pt-0 border-t border-zinc-100 mt-2">
                 <button
                   onClick={() => onSelectRoom(room)}
-                  className="w-full mt-2.5 inline-flex items-center justify-between text-xs font-semibold text-stone-800 bg-stone-50 hover:bg-stone-100 border border-stone-200 hover:border-stone-300 py-2 px-3 rounded-md transition-colors"
+                  className="w-full mt-3 inline-flex items-center justify-between text-xs font-black text-[#FA5C38] hover:text-[#E04B28] hover:bg-[#FA5C38]/10 py-2.5 px-3 rounded-xl transition-all"
                 >
                   <span>{content.detailBtn}</span>
-                  <ArrowUpRight className="w-3.5 h-3.5 text-[#E04D26]" />
+                  <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
             </div>

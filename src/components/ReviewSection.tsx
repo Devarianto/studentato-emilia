@@ -24,26 +24,26 @@ export const ReviewSection: React.FC<ReviewSectionProps> = ({
 
   const content = {
     EN: {
-      eyebrow: 'RESIDENT EXPERIENCES',
-      title: 'Voices of Our Student Community',
+      eyebrow: 'TESTIMONIALS & REVIEWS',
+      title: 'What Our Students Say',
       subtitle:
-        'Unfiltered feedback from verified students attending Politecnico di Torino and Università degli Studi di Torino.',
-      writeBtn: 'Submit Your Experience',
+        'Read authentic feedback from verified university residents living at Studentato Emilia.',
+      writeBtn: 'Write a Student Review',
       filterAll: 'All Ratings',
       filterAllUni: 'All Universities',
       verifiedResident: 'Verified Resident',
-      totalReviews: `based on ${reviews.length}+ verified resident stays`,
+      totalReviews: `based on ${reviews.length}+ verified reviews`,
     },
     IT: {
-      eyebrow: 'ESPERIENZE DEI RESIDENTI',
-      title: 'La Voce della Nostra Comunità Studentesca',
+      eyebrow: 'TESTIMONIANZE E RECENSIONI',
+      title: 'Cosa Dicono I Nostri Studenti',
       subtitle:
-        'Recensioni autentiche di studenti iscritti al Politecnico di Torino e all’Università degli Studi di Torino.',
-      writeBtn: 'Condividi la Tua Esperienza',
-      filterAll: 'Tutte le Valutazioni',
+        'Leggi le recensioni autentiche di studenti residenti nelle nostre strutture Studentato Emilia.',
+      writeBtn: 'Scrivi Una Recensione',
+      filterAll: 'Tutte le Stelle',
       filterAllUni: 'Tutti gli Atenei',
       verifiedResident: 'Residente Verificato',
-      totalReviews: `basato su ${reviews.length}+ soggiorni verificati`,
+      totalReviews: `basato su ${reviews.length}+ recensioni verificate`,
     },
   }[language];
 
@@ -58,36 +58,35 @@ export const ReviewSection: React.FC<ReviewSectionProps> = ({
   return (
     <section
       id="reviews"
-      className="py-16 sm:py-24 bg-[#F4EFEA] border-b border-stone-200 scroll-mt-12"
+      className="py-16 sm:py-24 bg-[#FFF8F0] border-b border-amber-900/10 scroll-mt-12"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
           <div className="space-y-3 max-w-2xl">
-            <div className="inline-flex items-center gap-2 text-stone-500 text-[11px] font-semibold tracking-[0.18em] uppercase border-b border-stone-300 pb-1">
-              <span className="w-1.5 h-1.5 bg-[#E04D26] rounded-xs" />
-              <span>{content.eyebrow}</span>
-            </div>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-stone-900 tracking-tight">
+            <span className="text-xs font-black tracking-widest text-[#FA5C38] uppercase block">
+              {content.eyebrow}
+            </span>
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-black text-zinc-900 tracking-tight">
               {content.title}
             </h2>
-            <p className="text-sm sm:text-base text-stone-600 leading-relaxed font-normal">
+            <p className="text-sm sm:text-base text-zinc-600 leading-relaxed font-normal">
               {content.subtitle}
             </p>
           </div>
 
           <div className="flex flex-wrap items-center gap-4">
-            <div className="bg-white p-3.5 rounded-lg border border-stone-200 shadow-2xs flex items-center gap-3">
-              <div className="w-10 h-10 rounded-md bg-[#1C1917] text-white flex items-center justify-center font-serif font-bold text-base">
+            <div className="bg-white p-4 rounded-2xl border border-amber-900/10 shadow-xs flex items-center gap-3">
+              <div className="w-12 h-12 rounded-xl bg-[#FFC83B] text-zinc-950 flex items-center justify-center font-heading font-black text-xl shadow-xs">
                 4.9
               </div>
               <div>
-                <div className="flex text-amber-500">
+                <div className="flex text-[#FFC83B]">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-3 h-3 fill-current" />
+                    <Star key={i} className="w-3.5 h-3.5 fill-current" />
                   ))}
                 </div>
-                <span className="text-[11px] font-medium text-stone-600 block mt-0.5">
+                <span className="text-xs font-bold text-zinc-600 block mt-0.5">
                   {content.totalReviews}
                 </span>
               </div>
@@ -95,28 +94,28 @@ export const ReviewSection: React.FC<ReviewSectionProps> = ({
 
             <button
               onClick={handleOpenModal}
-              className="bg-[#E04D26] hover:bg-[#CC3E18] text-white font-semibold px-4 py-3 rounded-md text-xs shadow-2xs transition-colors flex items-center gap-2"
+              className="bg-[#FA5C38] hover:bg-[#E04B28] text-white font-extrabold px-5 py-3.5 rounded-2xl text-xs sm:text-sm shadow-md shadow-orange-500/20 transition-all flex items-center gap-2 active:scale-98"
             >
-              <MessageSquarePlus className="w-3.5 h-3.5 text-white" />
+              <MessageSquarePlus className="w-4 h-4 text-white" />
               <span>{content.writeBtn}</span>
             </button>
           </div>
         </div>
 
         {/* Filter bar */}
-        <div className="bg-white p-3 rounded-lg border border-stone-200 shadow-2xs mb-8 flex flex-wrap items-center justify-between gap-3 text-xs">
-          <div className="flex items-center gap-2 font-medium text-stone-700">
-            <Filter className="w-3.5 h-3.5 text-[#E04D26]" />
+        <div className="bg-white p-4 rounded-2xl border border-amber-900/10 shadow-xs mb-8 flex flex-wrap items-center justify-between gap-3 text-xs">
+          <div className="flex items-center gap-2 font-bold text-zinc-700">
+            <Filter className="w-4 h-4 text-[#FA5C38]" />
             <span>Filter Reviews:</span>
           </div>
 
-          <div className="flex flex-wrap items-center gap-1.5">
+          <div className="flex flex-wrap items-center gap-2">
             <button
               onClick={() => setStarFilter('All')}
-              className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
+              className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
                 starFilter === 'All'
-                  ? 'bg-[#E04D26] text-white shadow-2xs'
-                  : 'bg-stone-100 text-stone-700 hover:bg-stone-200'
+                  ? 'bg-[#FA5C38] text-white shadow-xs'
+                  : 'bg-zinc-100 text-zinc-700 hover:bg-zinc-200'
               }`}
             >
               {content.filterAll}
@@ -124,31 +123,31 @@ export const ReviewSection: React.FC<ReviewSectionProps> = ({
 
             <button
               onClick={() => setStarFilter(5)}
-              className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
+              className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
                 starFilter === 5
-                  ? 'bg-[#E04D26] text-white shadow-2xs'
-                  : 'bg-stone-100 text-stone-700 hover:bg-stone-200'
+                  ? 'bg-[#FA5C38] text-white shadow-xs'
+                  : 'bg-zinc-100 text-zinc-700 hover:bg-zinc-200'
               }`}
             >
-              5 Stars (★★★★★)
+              5 ★★★★★
             </button>
 
             <button
               onClick={() => setStarFilter(4)}
-              className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
+              className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
                 starFilter === 4
-                  ? 'bg-[#E04D26] text-white shadow-2xs'
-                  : 'bg-stone-100 text-stone-700 hover:bg-stone-200'
+                  ? 'bg-[#FA5C38] text-white shadow-xs'
+                  : 'bg-zinc-100 text-zinc-700 hover:bg-zinc-200'
               }`}
             >
-              4 Stars (★★★★☆)
+              4 ★★★★☆
             </button>
           </div>
 
           <select
             value={universityFilter}
             onChange={(e) => setUniversityFilter(e.target.value)}
-            className="bg-stone-50 text-stone-800 text-xs font-medium rounded-md px-3 py-1.5 border border-stone-300 focus:border-[#E04D26] outline-none"
+            className="bg-zinc-100 text-zinc-900 text-xs font-bold rounded-xl px-3 py-2 border border-zinc-200 outline-none"
           >
             <option value="All">{content.filterAllUni}</option>
             <option value="Politecnico">Politecnico di Torino</option>
@@ -162,41 +161,41 @@ export const ReviewSection: React.FC<ReviewSectionProps> = ({
           {filteredReviews.map((rev) => (
             <div
               key={rev.id}
-              className="bg-white p-5 rounded-lg border border-stone-200 shadow-2xs flex flex-col justify-between"
+              className="bg-white p-6 rounded-3xl border border-amber-900/10 shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between mb-3">
-                  <div className="flex text-amber-500">
+                  <div className="flex text-[#FFC83B]">
                     {[...Array(rev.rating)].map((_, i) => (
-                      <Star key={i} className="w-3 h-3 fill-current" />
+                      <Star key={i} className="w-3.5 h-3.5 fill-current" />
                     ))}
                   </div>
 
                   {rev.verified && (
-                    <span className="text-[10px] font-medium text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 flex items-center gap-1">
+                    <span className="text-[10px] font-bold text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200 flex items-center gap-1">
                       <Check className="w-3 h-3 text-emerald-600" />
                       {content.verifiedResident}
                     </span>
                   )}
                 </div>
 
-                <p className="text-xs sm:text-sm text-stone-700 leading-relaxed font-serif italic mb-5">
+                <p className="text-xs sm:text-sm text-zinc-700 leading-relaxed font-medium italic mb-6">
                   "{rev.comment[language]}"
                 </p>
               </div>
 
-              <div className="pt-3.5 border-t border-stone-100 flex items-center gap-3">
+              <div className="pt-4 border-t border-zinc-100 flex items-center gap-3">
                 <img
                   src={rev.avatar}
                   alt={rev.studentName}
-                  className="w-10 h-10 rounded-full object-cover border border-stone-300"
+                  className="w-11 h-11 rounded-full object-cover border-2 border-[#FFC83B] shadow-xs"
                 />
                 <div>
-                  <h4 className="font-serif font-semibold text-xs sm:text-sm text-stone-900">
+                  <h4 className="font-heading font-black text-sm text-zinc-900">
                     {rev.studentName}
                   </h4>
-                  <p className="text-[11px] font-medium text-[#E04D26]">{rev.university}</p>
-                  <p className="text-[10px] text-stone-500">
+                  <p className="text-xs font-bold text-[#FA5C38]">{rev.university}</p>
+                  <p className="text-[10px] text-zinc-500">
                     {rev.roomType} • Torino
                   </p>
                 </div>

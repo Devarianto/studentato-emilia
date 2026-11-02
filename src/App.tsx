@@ -83,7 +83,7 @@ function MainAppContent() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5] text-stone-900 font-sans selection:bg-[#FEE4D6] selection:text-stone-900">
+    <div className="min-h-screen bg-[#FFF8F0] text-zinc-900 font-sans selection:bg-[#FFC83B] selection:text-zinc-950">
       {/* WordPress-style Top Admin Bar — ONLY visible if an admin is currently logged in */}
       {isAuthenticated && (
         <div className="bg-[#1C1917] text-white text-xs px-4 py-1.5 flex items-center justify-between border-b border-stone-700">

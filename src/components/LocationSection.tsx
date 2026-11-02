@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Language } from '../types';
-import { MapPin, Navigation, Bus, Check, ArrowUpRight } from 'lucide-react';
+import { MapPin, Navigation, Bus, Check, ArrowRight } from 'lucide-react';
 import { useCMS } from '../context/CMSContext';
 
 interface LocationSectionProps {
@@ -16,23 +16,23 @@ export const LocationSection: React.FC<LocationSectionProps> = ({ language }) =>
 
   const content = {
     EN: {
-      eyebrow: 'NEIGHBORHOOD & CONNECTIVITY',
-      title: 'Strategic Location in Torino',
+      eyebrow: 'LOCATION & CAMPUS HUB',
+      title: 'Our Residence Location',
       subtitle:
-        'Viale della Rimembranza 2, Torino — positioned in a tranquil historic district with rapid transit to Politecnico di Torino and UniTO faculties.',
+        'Viale della Rimembranza 2, Torino, Italy — positioned in a tranquil student district with direct transit to Politecnico di Torino and UniTO faculties.',
       addressLabel: 'Official Residence Address:',
-      campusLabel: 'University Transit Proximity:',
-      transitLabel: 'Metro, Tram & Rail Links:',
+      campusLabel: 'Campus Proximity:',
+      transitLabel: 'Public Transit:',
       getDirections: 'Open in Google Maps',
     },
     IT: {
-      eyebrow: 'QUARTIERE & COLLEGAMENTI',
-      title: 'Posizione Strategica a Torino',
+      eyebrow: 'POSIZIONE E CAMPUS',
+      title: 'La Nostra Residenza',
       subtitle:
-        'Viale della Rimembranza 2, Torino — situata in un tranquillo contesto residenziale con collegamenti rapidi per il Politecnico di Torino e UniTO.',
-      addressLabel: 'Indirizzo Ufficiale:',
-      campusLabel: 'Distanza dai Campus:',
-      transitLabel: 'Metro, Tram e Bus:',
+        'Viale della Rimembranza 2, Torino, Italia — situata nel cuore del distretto universitario con collegamenti rapidi per Politecnico e UniTO.',
+      addressLabel: 'Indirizzo:',
+      campusLabel: 'Vicinanza Campus:',
+      transitLabel: 'Trasporti Pubblici:',
       getDirections: 'Apri su Google Maps',
     },
   }[language];
@@ -40,98 +40,97 @@ export const LocationSection: React.FC<LocationSectionProps> = ({ language }) =>
   if (!activeLoc) return null;
 
   return (
-    <section id="contact" className="py-16 sm:py-24 bg-[#FAF8F5] border-b border-stone-200">
+    <section id="contact" className="py-16 sm:py-24 bg-[#FFF8F0] border-b border-amber-900/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="space-y-3 mb-10 max-w-2xl">
-          <div className="inline-flex items-center gap-2 text-stone-500 text-[11px] font-semibold tracking-[0.18em] uppercase border-b border-stone-300 pb-1">
-            <span className="w-1.5 h-1.5 bg-[#E04D26] rounded-xs" />
+          <div className="inline-flex items-center gap-2 bg-[#FA5C38]/10 text-[#FA5C38] px-3.5 py-1.5 rounded-full text-xs font-bold border border-[#FA5C38]/20">
             <span>{content.eyebrow}</span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-stone-900 tracking-tight">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-black text-zinc-900 tracking-tight">
             {content.title}
           </h2>
-          <p className="text-sm sm:text-base text-stone-600 leading-relaxed font-normal">
+          <p className="text-sm sm:text-base text-zinc-600 leading-relaxed font-normal">
             {content.subtitle}
           </p>
         </div>
 
         {/* Location Dossier Card */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 bg-white rounded-lg p-6 sm:p-8 border border-stone-200 shadow-2xs">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 bg-white rounded-3xl p-6 sm:p-8 border border-amber-900/10 shadow-sm">
           <div className="lg:col-span-5 space-y-6 flex flex-col justify-between">
             <div className="space-y-4">
-              <div className="inline-flex items-center gap-1.5 text-stone-600 text-[11px] font-medium tracking-wider uppercase border border-stone-200 px-2.5 py-1 rounded bg-stone-50">
-                <MapPin className="w-3.5 h-3.5 text-[#E04D26]" />
-                <span>Torino • Student Hub</span>
+              <div className="inline-flex items-center gap-2 bg-[#FFC83B] text-zinc-950 font-black px-3 py-1 rounded-xl text-xs uppercase shadow-xs">
+                <MapPin className="w-3.5 h-3.5 text-zinc-950" />
+                <span>{activeLoc.city} CAMPUS HUB</span>
               </div>
 
-              <h3 className="font-serif font-semibold text-2xl text-stone-900">
+              <h3 className="font-heading font-black text-2xl sm:text-3xl text-zinc-900">
                 Studentato Emilia {activeLoc.city}
               </h3>
 
-              <div className="space-y-3 text-xs text-stone-700 pt-2 border-t border-stone-100">
+              <div className="space-y-3 text-xs sm:text-sm text-zinc-700 pt-2 border-t border-zinc-100">
                 <div className="flex items-start gap-2.5">
-                  <MapPin className="w-4 h-4 text-[#E04D26] shrink-0 mt-0.5" />
+                  <MapPin className="w-4 h-4 text-[#FA5C38] shrink-0 mt-0.5" />
                   <div>
-                    <span className="font-semibold block text-stone-900">
+                    <span className="font-extrabold block text-zinc-900">
                       {content.addressLabel}
                     </span>
-                    <span className="text-stone-600">{activeLoc.address}</span>
+                    <span className="text-zinc-600 font-medium">{activeLoc.address}</span>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-2.5">
-                  <Navigation className="w-4 h-4 text-[#E04D26] shrink-0 mt-0.5" />
+                  <Navigation className="w-4 h-4 text-[#FA5C38] shrink-0 mt-0.5" />
                   <div>
-                    <span className="font-semibold block text-stone-900">
+                    <span className="font-extrabold block text-zinc-900">
                       {content.campusLabel}
                     </span>
-                    <span className="text-stone-600">{activeLoc.distanceToCampus}</span>
+                    <span className="text-zinc-600 font-medium">{activeLoc.distanceToCampus}</span>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-2.5">
-                  <Bus className="w-4 h-4 text-[#E04D26] shrink-0 mt-0.5" />
+                  <Bus className="w-4 h-4 text-[#FA5C38] shrink-0 mt-0.5" />
                   <div>
-                    <span className="font-semibold block text-stone-900">
+                    <span className="font-extrabold block text-zinc-900">
                       {content.transitLabel}
                     </span>
-                    <span className="text-stone-600">{activeLoc.metroBusAccess}</span>
+                    <span className="text-zinc-600 font-medium">{activeLoc.metroBusAccess}</span>
                   </div>
                 </div>
               </div>
 
               <div className="pt-2">
-                <span className="text-[11px] font-semibold text-stone-500 uppercase tracking-wider block mb-2">
+                <span className="text-xs font-extrabold text-zinc-900 uppercase block mb-2">
                   Building Highlights:
                 </span>
                 <div className="flex flex-wrap gap-1.5">
                   {activeLoc.highlights.map((h, i) => (
                     <span
                       key={i}
-                      className="text-[11px] font-medium text-stone-700 bg-stone-100 px-2.5 py-1 rounded border border-stone-200 flex items-center gap-1.5"
+                      className="text-xs font-bold text-zinc-800 bg-amber-50 px-2.5 py-1 rounded-lg border border-amber-200 flex items-center gap-1.5"
                     >
-                      <Check className="w-3 h-3 text-[#E04D26]" /> {h}
+                      <Check className="w-3 h-3 text-[#FA5C38]" /> {h}
                     </span>
                   ))}
                 </div>
               </div>
             </div>
 
-            <div className="pt-4 border-t border-stone-100">
+            <div className="pt-4 border-t border-zinc-100">
               <a
                 href={`https://maps.google.com/?q=${encodeURIComponent(activeLoc.address)}`}
                 target="_blank"
                 rel="noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 bg-[#1C1917] hover:bg-stone-800 text-white font-medium text-xs py-3 px-4 rounded-md transition-colors shadow-2xs"
+                className="w-full inline-flex items-center justify-center gap-2 bg-zinc-900 hover:bg-zinc-800 text-white font-extrabold text-xs sm:text-sm py-3.5 px-4 rounded-xl transition-all shadow-md active:scale-98"
               >
                 <span>{content.getDirections}</span>
-                <ArrowUpRight className="w-3.5 h-3.5 text-[#E04D26]" />
+                <ArrowRight className="w-4 h-4 text-[#FFC83B]" />
               </a>
             </div>
           </div>
 
-          <div className="lg:col-span-7 rounded-md overflow-hidden border border-stone-300 min-h-[360px] bg-stone-100 relative">
+          <div className="lg:col-span-7 rounded-2xl overflow-hidden border border-zinc-200 min-h-[360px] bg-zinc-100 relative shadow-inner">
             <iframe
               title={`Map of Studentato Emilia ${activeLoc.city}`}
               src={activeLoc.mapEmbedUrl}

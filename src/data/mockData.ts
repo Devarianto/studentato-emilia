@@ -452,10 +452,10 @@ export const DEFAULT_CMS_DATA: CMSData = {
     }
   },
   theme: {
-    primaryColor: '#E04D26',
-    secondaryColor: '#D99426',
-    backgroundColor: '#FAF8F5',
-    topbarColor: '#1C1917',
+    primaryColor: '#FA5C38',
+    secondaryColor: '#FFC83B',
+    backgroundColor: '#FFF8F0',
+    topbarColor: '#18181B',
     footerColor: '#181614',
     fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif',
     defaultDesktopVersion: 'v1',

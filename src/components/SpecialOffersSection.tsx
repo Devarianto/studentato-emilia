@@ -17,13 +17,13 @@ export const SpecialOffersSection: React.FC<SpecialOffersSectionProps> = ({ lang
   const labels = {
     EN: {
       emailPlaceholder: 'Enter university email (e.g. name@polito.it)...',
-      submitBtn: 'Claim Academic Code',
-      claimedSuccess: `Academic discount code ${offers.promoCode} has been sent to your email.`,
+      submitBtn: 'Get Offer Code',
+      claimedSuccess: `Discount code ${offers.promoCode} has been sent to your email!`,
     },
     IT: {
       emailPlaceholder: 'Email universitaria (es. nome@unito.it)...',
-      submitBtn: 'Richiedi Codice Studio',
-      claimedSuccess: `Il codice promozionale ${offers.promoCode} è stato inviato alla tua email.`,
+      submitBtn: 'Ottieni Codice',
+      claimedSuccess: `Il codice sconto ${offers.promoCode} è stato inviato alla tua email!`,
     },
   }[language];
 
@@ -35,28 +35,29 @@ export const SpecialOffersSection: React.FC<SpecialOffersSectionProps> = ({ lang
   };
 
   return (
-    <section id="promotions" className="py-16 sm:py-20 bg-[#FAF8F5] border-b border-stone-200">
+    <section id="promotions" className="py-16 sm:py-20 bg-[#FFF8F0] border-b border-amber-900/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-[#1C1917] rounded-lg p-6 sm:p-12 text-stone-100 border border-stone-800 shadow-sm relative overflow-hidden">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        {/* Vibrant Orange & Yellow Academic Banner */}
+        <div className="bg-[#FA5C38] rounded-3xl p-6 sm:p-12 text-white shadow-xl relative overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
             <div className="lg:col-span-7 space-y-4">
-              <div className="inline-flex items-center gap-1.5 text-stone-400 text-[11px] font-semibold tracking-[0.16em] uppercase">
-                <Tag className="w-3.5 h-3.5 text-[#E04D26]" />
+              <div className="inline-flex items-center gap-1.5 bg-white/20 px-3.5 py-1.5 rounded-full text-xs font-black tracking-widest uppercase text-white">
+                <Tag className="w-3.5 h-3.5 text-[#FFC83B]" />
                 <span>{offers.eyebrow[language]}</span>
               </div>
 
-              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white leading-tight">
+              <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-tight">
                 {offers.titleHighlight[language]} <br />
-                <span className="text-[#E04D26] italic font-serif font-normal">{offers.titleSub[language]}</span>
+                <span className="text-[#FFC83B]">{offers.titleSub[language]}</span>
               </h2>
 
-              <p className="text-sm sm:text-base text-stone-300 leading-relaxed font-normal max-w-lg">
+              <p className="text-sm sm:text-base text-white/95 leading-relaxed font-normal max-w-lg">
                 {offers.desc[language]}
               </p>
 
               {claimed ? (
-                <div className="bg-stone-900 border border-stone-700 text-stone-200 p-4 rounded-md font-medium text-xs flex items-center gap-2.5">
-                  <Check className="w-4 h-4 text-emerald-400 shrink-0" />
+                <div className="bg-[#FFC83B] text-zinc-950 p-4 rounded-xl font-extrabold text-xs flex items-center gap-2.5 shadow-md">
+                  <Check className="w-4 h-4 text-zinc-950 shrink-0" />
                   <span>{labels.claimedSuccess}</span>
                 </div>
               ) : (
@@ -70,11 +71,11 @@ export const SpecialOffersSection: React.FC<SpecialOffersSectionProps> = ({ lang
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder={labels.emailPlaceholder}
-                    className="bg-stone-900 text-stone-100 placeholder-stone-500 px-3.5 py-3 rounded-md text-xs font-medium border border-stone-700 focus:border-[#E04D26] outline-none flex-1"
+                    className="bg-white text-zinc-900 placeholder-zinc-400 px-4 py-3 rounded-xl text-xs font-semibold outline-none flex-1 shadow-xs"
                   />
                   <button
                     type="submit"
-                    className="bg-[#E04D26] hover:bg-[#CC3E18] text-white font-semibold px-5 py-3 rounded-md text-xs transition-colors shrink-0 shadow-2xs"
+                    className="bg-[#FFC83B] hover:bg-[#eab308] text-zinc-950 font-black px-6 py-3 rounded-xl text-xs sm:text-sm shadow-md transition-all shrink-0 active:scale-98"
                   >
                     {labels.submitBtn}
                   </button>
@@ -83,13 +84,13 @@ export const SpecialOffersSection: React.FC<SpecialOffersSectionProps> = ({ lang
             </div>
 
             <div className="lg:col-span-5">
-              <div className="relative rounded-lg overflow-hidden border border-stone-700 bg-stone-950">
+              <div className="relative rounded-2xl overflow-hidden border-4 border-white/30 shadow-xl bg-zinc-900">
                 <img
                   src={offers.image}
                   alt="Student Room Special Academic Offer"
-                  className="w-full h-64 sm:h-72 object-cover opacity-90"
+                  className="w-full h-64 sm:h-72 object-cover"
                 />
-                <div className="absolute top-3 right-3 bg-stone-900/95 text-stone-100 px-3 py-1.5 rounded text-xs font-serif font-bold border border-stone-700">
+                <div className="absolute top-3 right-3 bg-[#FFC83B] text-zinc-950 px-3.5 py-1.5 rounded-xl text-xs font-heading font-black shadow-md">
                   {offers.badgeText}
                 </div>
               </div>

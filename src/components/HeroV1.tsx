@@ -26,24 +26,22 @@ export const HeroV1: React.FC<HeroV1Props> = ({
 
   const labels = {
     EN: {
-      eyebrow: 'RESIDENZA UNIVERSITARIA • TORINO, ITALIA',
-      searchTitle: 'Check Academic Availability',
+      searchTitle: 'Instant Availability Finder',
       cityLabel: 'Campus / Location',
-      typeLabel: 'Accommodation Type',
-      dateLabel: 'Semester / Intake',
-      searchBtn: 'Search Available Rooms',
-      exploreBtn: 'View Room Catalog',
-      watchVideo: 'Video Tour (2 Min)',
+      typeLabel: 'Accommodation Style',
+      dateLabel: 'Semester / Move-in',
+      searchBtn: 'Search Rooms',
+      exploreBtn: 'Explore All Rooms',
+      watchVideo: 'Virtual Video Tour',
     },
     IT: {
-      eyebrow: 'RESIDENZA UNIVERSITARIA • TORINO, ITALIA',
-      searchTitle: 'Verifica Disponibilità Accademica',
+      searchTitle: 'Verifica Disponibilità Immediata',
       cityLabel: 'Campus / Zona',
       typeLabel: 'Tipologia Alloggio',
       dateLabel: 'Ingresso Semestre',
-      searchBtn: 'Cerca Camere Disponibili',
-      exploreBtn: 'Catalogo Alloggi',
-      watchVideo: 'Guarda Tour Video (2 Min)',
+      searchBtn: 'Cerca Camere',
+      exploreBtn: 'Esplora Tutte le Camere',
+      watchVideo: 'Guarda Video Tour',
     },
   }[language];
 
@@ -57,54 +55,54 @@ export const HeroV1: React.FC<HeroV1Props> = ({
   };
 
   return (
-    <section className="relative bg-[#FAF8F5] pt-10 pb-16 lg:pt-14 lg:pb-24 border-b border-stone-200">
+    <section className="relative bg-[#FFF8F0] pt-8 pb-16 lg:pt-12 lg:pb-20 border-b border-amber-900/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          {/* Left Column: Editorial Typographic Hierarchy */}
-          <div className="lg:col-span-7 space-y-7">
-            {/* Architectural Eyebrow (No Sparkles, No Rainbow Pills) */}
-            <div className="inline-flex items-center gap-2 text-stone-500 text-[11px] font-semibold tracking-[0.18em] uppercase border-b border-stone-300 pb-1">
-              <span className="w-1.5 h-1.5 bg-[#E04D26] rounded-xs" />
-              <span>{labels.eyebrow}</span>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+          {/* Left Column: Modern High-Impact Layout */}
+          <div className="lg:col-span-7 space-y-6">
+            {/* Modern Eyebrow Badge */}
+            <div className="inline-flex items-center gap-2 bg-[#FA5C38]/10 text-[#FA5C38] px-3.5 py-1.5 rounded-full text-xs font-bold border border-[#FA5C38]/20">
+              <span className="w-2 h-2 rounded-full bg-[#FA5C38]" />
+              <span>{h1.badge[language]}</span>
             </div>
 
-            {/* Editorial Headline */}
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-[3.5rem] font-semibold tracking-tight text-stone-900 leading-[1.12]">
-              <span className="text-[#E04D26] italic font-serif font-normal">
+            {/* Modern Bold Headline */}
+            <h1 className="font-heading text-4xl sm:text-5xl lg:text-[3.6rem] font-black tracking-tight text-zinc-900 leading-[1.08]">
+              <span className="text-[#FA5C38]">
                 {h1.titleHighlight[language]}
               </span>{' '}
               <br className="hidden sm:inline" />
               <span>{h1.titleSub[language]}</span>
             </h1>
 
-            {/* Subtitle with unhurried editorial tone */}
-            <p className="text-base sm:text-lg text-stone-600 max-w-2xl font-normal leading-relaxed">
+            {/* Modern Clean Subtitle */}
+            <p className="text-base sm:text-lg text-zinc-600 max-w-2xl font-normal leading-relaxed">
               {h1.description[language]}
             </p>
 
-            {/* Key Residence Facts (Clean Hairline Badges, not neon bubbles) */}
+            {/* Key Residence Facts */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-1">
               {(h1.features[language] || []).map((feat, idx) => (
                 <div
                   key={idx}
-                  className="flex items-center gap-2 text-xs font-medium text-stone-800 bg-white px-3 py-2 rounded-md border border-stone-200 shadow-2xs"
+                  className="flex items-center gap-2 text-xs font-bold text-zinc-800 bg-white px-3 py-2.5 rounded-xl border border-amber-900/10 shadow-xs"
                 >
-                  <Check className="w-3.5 h-3.5 text-[#E04D26] shrink-0" />
+                  <Check className="w-3.5 h-3.5 text-[#FA5C38] shrink-0" />
                   <span className="truncate">{feat}</span>
                 </div>
               ))}
             </div>
 
-            {/* Search Availability Box: Architectural & Tactile */}
-            <div className="bg-white p-5 sm:p-6 rounded-lg shadow-xs border border-stone-200/90 mt-4">
-              <div className="flex flex-wrap items-center justify-between gap-2 pb-3 mb-4 border-b border-stone-100">
+            {/* Search Availability Box */}
+            <div className="bg-white p-5 sm:p-6 rounded-2xl shadow-md border border-amber-900/10 mt-3">
+              <div className="flex flex-wrap items-center justify-between gap-2 pb-3 mb-4 border-b border-zinc-100">
                 <div className="flex items-center gap-2">
-                  <Building2 className="w-4 h-4 text-[#E04D26]" />
-                  <h3 className="font-serif font-semibold text-sm sm:text-base text-stone-900">
+                  <Building2 className="w-4 h-4 text-[#FA5C38]" />
+                  <h3 className="font-heading font-extrabold text-sm sm:text-base text-zinc-900">
                     {labels.searchTitle}
                   </h3>
                 </div>
-                <span className="text-[11px] font-medium text-stone-600 bg-stone-100 px-2.5 py-0.5 rounded border border-stone-200">
+                <span className="text-xs font-bold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
                   {h1.availabilityTag[language]}
                 </span>
               </div>
@@ -114,14 +112,14 @@ export const HeroV1: React.FC<HeroV1Props> = ({
                 className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs"
               >
                 <div>
-                  <label className="block font-medium text-stone-600 mb-1 flex items-center gap-1">
-                    <MapPin className="w-3 h-3 text-[#E04D26]" />
+                  <label className="block font-bold text-zinc-600 mb-1 flex items-center gap-1">
+                    <MapPin className="w-3.5 h-3.5 text-[#FA5C38]" />
                     {labels.cityLabel}
                   </label>
                   <select
                     value={city}
                     onChange={(e) => setCity(e.target.value)}
-                    className="w-full bg-stone-50 border border-stone-300 text-stone-800 text-xs font-medium rounded-md p-2.5 focus:border-[#E04D26] outline-none"
+                    className="w-full bg-zinc-50 border border-zinc-200 text-zinc-900 text-xs font-semibold rounded-xl p-2.5 focus:border-[#FA5C38] outline-none"
                   >
                     <option value="All">All Locations (Torino)</option>
                     <option value="Torino">Viale della Rimembranza 2</option>
@@ -129,43 +127,43 @@ export const HeroV1: React.FC<HeroV1Props> = ({
                 </div>
 
                 <div>
-                  <label className="block font-medium text-stone-600 mb-1 flex items-center gap-1">
-                    <Building2 className="w-3 h-3 text-[#E04D26]" />
+                  <label className="block font-bold text-zinc-600 mb-1 flex items-center gap-1">
+                    <Building2 className="w-3.5 h-3.5 text-[#FA5C38]" />
                     {labels.typeLabel}
                   </label>
                   <select
                     value={roomType}
                     onChange={(e) => setRoomType(e.target.value)}
-                    className="w-full bg-stone-50 border border-stone-300 text-stone-800 text-xs font-medium rounded-md p-2.5 focus:border-[#E04D26] outline-none"
+                    className="w-full bg-zinc-50 border border-zinc-200 text-zinc-900 text-xs font-semibold rounded-xl p-2.5 focus:border-[#FA5C38] outline-none"
                   >
                     <option value="All">All Room Types</option>
                     <option value="single_deluxe">Single Deluxe Suite</option>
                     <option value="single_standard">Standard Single Study</option>
-                    <option value="shared_twin">Executive Twin Suite</option>
-                    <option value="studio">Private Studio Apartment</option>
+                    <option value="shared_twin">Shared Twin Studio</option>
+                    <option value="studio">Studio Apartment</option>
                   </select>
                 </div>
 
                 <div>
-                  <label className="block font-medium text-stone-600 mb-1 flex items-center gap-1">
-                    <Calendar className="w-3 h-3 text-[#E04D26]" />
+                  <label className="block font-bold text-zinc-600 mb-1 flex items-center gap-1">
+                    <Calendar className="w-3.5 h-3.5 text-[#FA5C38]" />
                     {labels.dateLabel}
                   </label>
                   <select
                     value={moveInDate}
                     onChange={(e) => setMoveInDate(e.target.value)}
-                    className="w-full bg-stone-50 border border-stone-300 text-stone-800 text-xs font-medium rounded-md p-2.5 focus:border-[#E04D26] outline-none"
+                    className="w-full bg-zinc-50 border border-zinc-200 text-zinc-900 text-xs font-semibold rounded-xl p-2.5 focus:border-[#FA5C38] outline-none"
                   >
-                    <option value="Sept 2025">September 2025 (Autumn)</option>
+                    <option value="Sept 2025">September 2025</option>
                     <option value="Oct 2025">October 2025</option>
-                    <option value="Immediate">Immediate Availability</option>
+                    <option value="Immediate">Immediate / Spring</option>
                   </select>
                 </div>
 
                 <div className="flex items-end">
                   <button
                     type="submit"
-                    className="w-full bg-[#E04D26] hover:bg-[#CC3E18] text-white font-semibold text-xs py-2.5 px-3 rounded-md transition-colors shadow-2xs flex items-center justify-center gap-1.5"
+                    className="w-full bg-[#FA5C38] hover:bg-[#E04B28] text-white font-extrabold text-xs py-2.5 px-3 rounded-xl transition-all shadow-md shadow-orange-500/20 flex items-center justify-center gap-1.5 active:scale-98"
                   >
                     <Search className="w-3.5 h-3.5" />
                     <span>{labels.searchBtn}</span>
@@ -174,73 +172,67 @@ export const HeroV1: React.FC<HeroV1Props> = ({
               </form>
             </div>
 
-            {/* Primary Action Buttons */}
+            {/* Action Buttons */}
             <div className="flex flex-wrap items-center gap-4 pt-1">
               <button
                 onClick={onOpenBookingModal}
-                className="bg-[#E04D26] hover:bg-[#CC3E18] text-white font-semibold px-5 py-3 rounded-md text-xs shadow-xs flex items-center gap-2 transition-colors border border-amber-950/15"
+                className="bg-[#FA5C38] hover:bg-[#E04B28] text-white font-extrabold px-6 py-3.5 rounded-full text-xs sm:text-sm shadow-md shadow-orange-500/25 flex items-center gap-2 transition-all hover:scale-[1.02] active:scale-98"
               >
                 <span>{labels.exploreBtn}</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight className="w-4 h-4 text-[#FFC83B]" />
               </button>
 
               <button
                 onClick={onOpenVideoModal}
-                className="bg-white hover:bg-stone-50 text-stone-800 font-semibold px-4 py-3 rounded-md text-xs border border-stone-300 flex items-center gap-2 transition-colors"
+                className="bg-white hover:bg-zinc-50 text-zinc-900 font-extrabold px-5 py-3.5 rounded-full text-xs sm:text-sm border border-zinc-300 flex items-center gap-2.5 transition-all shadow-xs"
               >
-                <div className="w-5 h-5 rounded-full bg-stone-100 flex items-center justify-center text-stone-900 border border-stone-200">
-                  <Play className="w-2.5 h-2.5 fill-current ml-0.5 text-stone-700" />
+                <div className="w-6 h-6 rounded-full bg-[#FFC83B] flex items-center justify-center text-zinc-950 font-bold">
+                  <Play className="w-3 h-3 fill-current ml-0.5 text-zinc-950" />
                 </div>
                 <span>{labels.watchVideo}</span>
               </button>
             </div>
           </div>
 
-          {/* Right Column: Architectural Photography Card */}
+          {/* Right Column: Modern Image Card with Orange & Yellow accents */}
           <div className="lg:col-span-5 relative mt-4 lg:mt-0">
-            <div className="relative rounded-lg overflow-hidden border border-stone-300 shadow-sm bg-stone-900 group">
+            <div className="relative rounded-3xl overflow-hidden border-4 border-white shadow-xl bg-zinc-900 group">
               <img
                 src={h1.heroImage}
                 alt="Studentato Emilia Residence Torino"
-                className="w-full h-[420px] sm:h-[480px] object-cover group-hover:scale-102 transition-transform duration-500"
+                className="w-full h-[420px] sm:h-[480px] object-cover group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
 
-              {/* Architectural Label Plaque */}
-              <div className="absolute bottom-4 left-4 right-4 bg-white/95 p-4 rounded-md border border-stone-200 shadow-sm">
+              {/* Bottom Plaque: Orange & Yellow Brand Accents */}
+              <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-4 rounded-2xl border border-white/50 shadow-lg">
                 <div className="flex items-center justify-between gap-3">
                   <div>
-                    <span className="text-[10px] font-semibold uppercase tracking-wider text-[#E04D26] block">
+                    <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#FA5C38] block">
                       {h1.cardEyebrow}
                     </span>
-                    <h4 className="font-serif font-semibold text-stone-900 text-sm sm:text-base">
+                    <h4 className="font-heading font-black text-zinc-900 text-base">
                       {h1.cardTitle}
                     </h4>
-                    <p className="text-[11px] text-stone-500 flex items-center gap-1 mt-0.5">
-                      <MapPin className="w-3 h-3 text-[#E04D26]" /> {h1.cardSubtitle}
+                    <p className="text-xs text-zinc-500 flex items-center gap-1 mt-0.5 font-medium">
+                      <MapPin className="w-3.5 h-3.5 text-[#FA5C38]" /> {h1.cardSubtitle}
                     </p>
                   </div>
-                  <div className="text-right bg-stone-100 border border-stone-200 text-stone-900 px-3 py-1.5 rounded font-serif font-bold text-sm">
+                  <div className="text-right bg-[#FFC83B] text-zinc-950 px-3.5 py-1.5 rounded-xl font-heading font-black text-sm shadow-xs">
                     {h1.cardPrice}
-                    <span className="text-[10px] font-sans font-normal text-stone-500">/mo</span>
+                    <span className="text-[10px] font-bold font-sans">/mo</span>
                   </div>
                 </div>
               </div>
 
-              {/* Play Tour Button */}
+              {/* Play Video Trigger */}
               <button
                 onClick={onOpenVideoModal}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-white/90 hover:bg-white text-stone-900 flex items-center justify-center shadow-lg transition-transform hover:scale-105"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-[#FA5C38] hover:bg-[#E04B28] text-white flex items-center justify-center shadow-xl transition-transform hover:scale-110 active:scale-95"
                 aria-label="Play virtual residence tour video"
               >
-                <Play className="w-5 h-5 fill-current ml-0.5 text-[#E04D26]" />
+                <Play className="w-7 h-7 fill-current ml-1 text-white" />
               </button>
-            </div>
-
-            {/* Official Residence Seal (Dignified & Architectural, not spinning cartoon) */}
-            <div className="hidden sm:flex absolute -bottom-4 -left-4 bg-[#1C1917] text-stone-200 px-3.5 py-2 rounded-md shadow-md border border-stone-700 text-[11px] font-serif tracking-wide items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-              <span>Torino Official Student Housing • Viale della Rimembranza 2</span>
             </div>
           </div>
         </div>

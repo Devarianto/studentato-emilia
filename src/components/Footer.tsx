@@ -101,23 +101,23 @@ export const Footer: React.FC<FooterProps> = ({ language }) => {
             </h4>
             <ul className="space-y-2.5 text-xs text-stone-300">
               <li className="flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-[#E04D26] shrink-0" />
-                <a href={`tel:${contact.phone}`} className="hover:text-white transition-colors">
+                <Phone className="w-3.5 h-3.5 text-[#FFC83B] shrink-0" />
+                <a href={`tel:${contact.phone}`} className="hover:text-[#FFC83B] transition-colors">
                   {contact.phone}
                 </a>
               </li>
               <li className="flex items-center gap-2">
-                <Mail className="w-3.5 h-3.5 text-[#E04D26] shrink-0" />
-                <a href={`mailto:${contact.email}`} className="hover:text-white transition-colors">
+                <Mail className="w-3.5 h-3.5 text-[#FFC83B] shrink-0" />
+                <a href={`mailto:${contact.email}`} className="hover:text-[#FFC83B] transition-colors">
                   {contact.email}
                 </a>
               </li>
               <li className="flex items-center gap-2">
-                <Globe className="w-3.5 h-3.5 text-[#E04D26] shrink-0" />
+                <Globe className="w-3.5 h-3.5 text-[#FA5C38] shrink-0" />
                 <span>{contact.website}</span>
               </li>
               <li className="flex items-start gap-2 pt-1 text-stone-400">
-                <MapPin className="w-3.5 h-3.5 text-[#E04D26] shrink-0 mt-0.5" />
+                <MapPin className="w-3.5 h-3.5 text-[#FA5C38] shrink-0 mt-0.5" />
                 <span>{contact.address}</span>
               </li>
             </ul>

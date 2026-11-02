@@ -13,11 +13,11 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ language }) => {
 
   const labels = {
     EN: {
-      linkToReviews: 'Read Verified Resident Experiences →',
-      exploreRooms: 'Browse All Rooms & Rates',
+      linkToReviews: 'Read All Verified Resident Reviews →',
+      exploreRooms: 'Explore Available Rooms',
     },
     IT: {
-      linkToReviews: 'Leggi le Recensioni dei Residenti →',
+      linkToReviews: 'Leggi Tutte le Recensioni dei Residenti →',
       exploreRooms: 'Esplora Tutte le Camere',
     },
   }[language];
@@ -31,12 +31,12 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ language }) => {
   };
 
   return (
-    <section id="about" className="py-16 sm:py-24 bg-[#F4EFEA] text-stone-900 border-b border-stone-200">
+    <section id="about" className="py-16 sm:py-24 bg-[#FFF8F0] text-zinc-900 border-b border-amber-900/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column: Authentic Photography & Testimonial Plaque */}
           <div className="lg:col-span-5 space-y-5">
-            <div className="relative rounded-lg overflow-hidden border border-stone-300 shadow-sm bg-stone-900">
+            <div className="relative rounded-3xl overflow-hidden border-4 border-white shadow-xl bg-zinc-900">
               <img
                 src={about.image}
                 alt="Studentato Emilia Residence Community Lounge"
@@ -44,66 +44,66 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ language }) => {
               />
             </div>
 
-            {/* Endorsement Card: Solid, Paper-like, Dignified */}
-            <div className="bg-white p-5 rounded-lg border border-stone-200 shadow-xs">
+            {/* Endorsement Card with Warm Yellow & Orange Accents */}
+            <div className="bg-white p-6 rounded-2xl border-2 border-[#FFC83B] shadow-md">
               <div className="flex items-center gap-3 mb-2.5">
-                <div className="w-9 h-9 rounded-md bg-[#F4EFEA] text-[#E04D26] flex items-center justify-center border border-stone-200">
-                  <ShieldCheck className="w-5 h-5 text-[#E04D26]" />
+                <div className="w-10 h-10 rounded-xl bg-[#FA5C38]/10 text-[#FA5C38] flex items-center justify-center font-bold">
+                  <ShieldCheck className="w-6 h-6 text-[#FA5C38]" />
                 </div>
                 <div>
-                  <div className="flex text-amber-500">
+                  <div className="flex text-[#FFC83B]">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-3.5 h-3.5 fill-current" />
+                      <Star key={i} className="w-4 h-4 fill-current" />
                     ))}
                   </div>
-                  <h4 className="font-serif font-semibold text-xs sm:text-sm text-stone-900 mt-0.5">
+                  <h4 className="font-heading font-extrabold text-sm text-zinc-900 mt-0.5">
                     {about.socialProofRating[language]}
                   </h4>
                 </div>
               </div>
 
-              <p className="text-xs text-stone-600 mb-3.5 leading-relaxed">
+              <p className="text-xs text-zinc-600 mb-4 leading-relaxed font-medium">
                 {about.socialProofDesc[language]}
               </p>
 
               <a
                 href="#reviews"
                 onClick={handleScrollToReviews}
-                className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#E04D26] hover:text-[#CC3E18] hover:underline"
+                className="w-full inline-flex items-center justify-center gap-2 bg-[#FFC83B] hover:bg-[#eab308] text-zinc-950 font-extrabold text-xs py-2.5 px-4 rounded-xl transition-all shadow-xs"
               >
-                <MessageSquare className="w-3.5 h-3.5" />
+                <MessageSquare className="w-4 h-4 text-zinc-950" />
                 <span>{labels.linkToReviews}</span>
               </a>
             </div>
           </div>
 
-          {/* Right Column: Editorial Narrative & Statistics */}
+          {/* Right Column: Narrative & Statistics */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-2 text-stone-500 text-[11px] font-semibold tracking-[0.18em] uppercase border-b border-stone-300 pb-1">
-              <span className="w-1.5 h-1.5 bg-[#E04D26] rounded-xs" />
+            <div className="inline-flex items-center gap-2 bg-[#FA5C38]/10 text-[#FA5C38] px-3.5 py-1.5 rounded-full text-xs font-bold border border-[#FA5C38]/20">
+              <span className="w-2 h-2 rounded-full bg-[#FA5C38]" />
               <span>{about.eyebrow[language]}</span>
             </div>
 
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-stone-900 leading-[1.18]">
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-zinc-900 leading-[1.15]">
               {about.heading[language]}
             </h2>
 
-            <div className="space-y-4 text-stone-600 text-sm sm:text-base leading-relaxed">
+            <div className="space-y-4 text-zinc-600 text-sm sm:text-base leading-relaxed">
               <p>{about.paragraph1[language]}</p>
-              <p className="text-stone-500">{about.paragraph2[language]}</p>
+              <p className="text-zinc-500">{about.paragraph2[language]}</p>
             </div>
 
-            {/* Metric Grid: Hairline dividers, crisp typography */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-stone-200">
+            {/* Metric Grid with Vibrant Orange Numbers */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-amber-900/10">
               {about.stats.map((st, i) => (
                 <div
                   key={i}
-                  className="bg-white p-3.5 rounded-md border border-stone-200 shadow-2xs"
+                  className="bg-white p-4 rounded-2xl border border-amber-900/10 shadow-xs"
                 >
-                  <span className="font-serif text-2xl sm:text-3xl font-bold text-[#E04D26] block">
+                  <span className="font-heading text-2xl sm:text-3xl font-black text-[#FA5C38] block">
                     {st.val}
                   </span>
-                  <span className="text-[11px] font-medium text-stone-600 block mt-1 leading-snug">
+                  <span className="text-xs font-bold text-zinc-700 block mt-1 leading-snug">
                     {st.label[language]}
                   </span>
                 </div>
@@ -113,10 +113,10 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ language }) => {
             <div className="pt-2">
               <a
                 href="#rooms"
-                className="inline-flex items-center gap-2 bg-[#E04D26] hover:bg-[#CC3E18] text-white font-semibold px-5 py-3 rounded-md text-xs transition-colors shadow-xs"
+                className="inline-flex items-center gap-2 bg-[#FA5C38] hover:bg-[#E04B28] text-white font-extrabold px-6 py-3.5 rounded-full text-xs sm:text-sm transition-all shadow-md shadow-orange-500/20 active:scale-98"
               >
                 <span>{labels.exploreRooms}</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight className="w-4 h-4 text-[#FFC83B]" />
               </a>
             </div>
           </div>

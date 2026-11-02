@@ -10,16 +10,16 @@ export const Logo: React.FC<LogoProps> = ({ variant = 'header', className = '' }
     return (
       <div className={`flex items-center gap-3 group ${className}`}>
         {/* Emblem Crest for Footer */}
-        <div className="flex items-center justify-center w-10 h-10 rounded-md bg-stone-800 text-stone-100 font-serif font-bold text-lg border border-stone-700 tracking-wider">
+        <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-stone-900 text-[#FFC83B] font-heading font-black text-lg border border-stone-800 tracking-wider">
           SE
         </div>
 
         <div className="flex flex-col">
-          <span className="font-serif text-xl tracking-tight text-white leading-none">
-            Studentato Emilia
+          <span className="font-heading font-extrabold text-xl tracking-tight text-white leading-none">
+            STUDENTATO <span className="text-[#FA5C38]">EMILIA</span>
           </span>
-          <span className="text-[10px] font-sans font-medium tracking-[0.2em] text-stone-400 uppercase mt-1">
-            Torino • Residenza Universitaria
+          <span className="text-[10px] font-sans font-semibold tracking-[0.2em] text-stone-400 uppercase mt-1">
+            TORINO • ITALY
           </span>
         </div>
       </div>
@@ -29,30 +29,30 @@ export const Logo: React.FC<LogoProps> = ({ variant = 'header', className = '' }
   if (variant === 'compact') {
     return (
       <div className={`flex items-center gap-2.5 ${className}`}>
-        <div className="flex items-center justify-center w-8 h-8 rounded-md bg-[#E04D26] text-white font-serif font-bold text-sm shadow-xs">
+        <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-[#FA5C38] text-white font-heading font-black text-sm border-2 border-[#FFC83B] shadow-xs">
           SE
         </div>
-        <span className="font-serif text-base tracking-tight text-stone-900">
-          Studentato Emilia
+        <span className="font-heading font-extrabold text-base tracking-tight text-zinc-900">
+          STUDENTATO <span className="text-[#FA5C38]">EMILIA</span>
         </span>
       </div>
     );
   }
 
-  // Header Default Logo: Refined, Architectural, Bespoke
+  // Modern Bold Header Logo
   return (
     <div className={`flex items-center gap-3 group ${className}`}>
-      {/* Architectural Monogram Seal */}
-      <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-[#E04D26] text-white font-serif font-bold text-lg shadow-xs group-hover:bg-[#CC3E18] transition-colors border border-amber-900/10">
+      {/* Modern Vibrant Monogram Icon */}
+      <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-[#FA5C38] text-white font-heading font-black text-base border-2 border-[#FFC83B] shadow-sm group-hover:bg-[#E04B28] transition-colors">
         SE
       </div>
 
       <div className="flex flex-col">
-        <span className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-stone-900 leading-none group-hover:text-[#E04D26] transition-colors">
-          Studentato Emilia
+        <span className="font-heading font-black text-xl sm:text-2xl tracking-tight text-zinc-900 leading-none group-hover:text-[#FA5C38] transition-colors">
+          STUDENTATO <span className="text-[#FA5C38]">EMILIA</span>
         </span>
-        <span className="text-[10px] sm:text-[11px] font-sans font-semibold tracking-[0.22em] text-[#E04D26] uppercase mt-0.5">
-          Torino • Viale della Rimembranza
+        <span className="text-[10px] sm:text-[11px] font-sans font-bold tracking-[0.22em] text-zinc-500 uppercase mt-0.5">
+          TORINO • ITALY
         </span>
       </div>
     </div>
