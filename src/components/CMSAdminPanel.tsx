@@ -59,7 +59,7 @@ export const CMSAdminPanel: React.FC = () => {
   const [activeTab, setActiveTab] = useState<CMSTab>('dashboard');
   const [editingRoomId, setEditingRoomId] = useState<string | null>(null);
   const [contentSubTab, setContentSubTab] = useState<
-    'contact' | 'heroV1' | 'heroV2' | 'about' | 'offers' | 'services'
+    'contact' | 'heroV1' | 'about' | 'offers' | 'services'
   >('heroV1');
   const [reviewFaqSubTab, setReviewFaqSubTab] = useState<'reviews' | 'faqs' | 'locations'>(
     'reviews'
@@ -740,14 +740,14 @@ export const CMSAdminPanel: React.FC = () => {
                   onClick={() => setActiveTab('theme')}
                   className="bg-white p-5 rounded-2xl border border-zinc-200 shadow-xs hover:shadow-md cursor-pointer transition-all"
                 >
-                  <span className="text-xs font-bold text-zinc-500 block">Tema & Layout Aktif</span>
+                  <span className="text-xs font-bold text-zinc-500 block">Tema & Gaya Visual</span>
                   <div className="flex items-center gap-2 mt-1.5">
                     <span
                       className="w-6 h-6 rounded-full border border-zinc-300"
                       style={{ backgroundColor: cmsData.theme.primaryColor }}
                     />
-                    <span className="text-lg font-black text-zinc-900 uppercase">
-                      Layout {cmsData.theme.defaultDesktopVersion}
+                    <span className="text-base font-black text-zinc-900">
+                      Torinese Editorial
                     </span>
                   </div>
                   <span className="text-[11px] font-bold text-zinc-600 mt-2 block">
@@ -1103,8 +1103,7 @@ export const CMSAdminPanel: React.FC = () => {
 
                   <div className="flex flex-wrap gap-1.5 bg-white p-2 rounded-2xl border border-zinc-200">
                     {[
-                      { id: 'heroV1', label: 'Hero V1 (Vibrant)' },
-                      { id: 'heroV2', label: 'Hero V2 (Editorial)' },
+                      { id: 'heroV1', label: 'Hero Banner Utama' },
                       { id: 'about', label: 'About Us & Stats' },
                       { id: 'offers', label: 'Promo 15%' },
                       { id: 'services', label: 'Layanan (01-05)' },
@@ -1127,7 +1126,7 @@ export const CMSAdminPanel: React.FC = () => {
                   {contentSubTab === 'heroV1' && (
                     <div className="bg-white p-6 rounded-2xl border border-zinc-200 space-y-4 text-xs">
                       <h4 className="font-black text-sm text-zinc-900 border-b pb-2">
-                        Edit Banner Utama — Hero V1 (Vibrant)
+                        Edit Banner Utama (Hero Section)
                       </h4>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <div>
@@ -1360,115 +1359,7 @@ export const CMSAdminPanel: React.FC = () => {
                     </div>
                   )}
 
-                  {contentSubTab === 'heroV2' && (
-                    <div className="bg-white p-6 rounded-2xl border border-zinc-200 space-y-4 text-xs">
-                      <h4 className="font-black text-sm text-zinc-900 border-b pb-2">
-                        Edit Banner Utama — Hero V2 (Editorial)
-                      </h4>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        <div>
-                          <label className="font-bold text-zinc-700 block mb-1">
-                            Headline Utama (EN)
-                          </label>
-                          <input
-                            type="text"
-                            value={cmsData.siteContent.heroV2.headlineMain.EN}
-                            onChange={(e) =>
-                              updateCMSData((prev) => ({
-                                ...prev,
-                                siteContent: {
-                                  ...prev.siteContent,
-                                  heroV2: {
-                                    ...prev.siteContent.heroV2,
-                                    headlineMain: {
-                                      ...prev.siteContent.heroV2.headlineMain,
-                                      EN: e.target.value,
-                                    },
-                                  },
-                                },
-                              }))
-                            }
-                            className="w-full border border-zinc-300 rounded-xl p-2 font-semibold"
-                          />
-                        </div>
-                        <div>
-                          <label className="font-bold text-zinc-700 block mb-1">
-                            Headline Utama (IT)
-                          </label>
-                          <input
-                            type="text"
-                            value={cmsData.siteContent.heroV2.headlineMain.IT}
-                            onChange={(e) =>
-                              updateCMSData((prev) => ({
-                                ...prev,
-                                siteContent: {
-                                  ...prev.siteContent,
-                                  heroV2: {
-                                    ...prev.siteContent.heroV2,
-                                    headlineMain: {
-                                      ...prev.siteContent.heroV2.headlineMain,
-                                      IT: e.target.value,
-                                    },
-                                  },
-                                },
-                              }))
-                            }
-                            className="w-full border border-zinc-300 rounded-xl p-2 font-semibold"
-                          />
-                        </div>
-                        <div>
-                          <label className="font-bold text-zinc-700 block mb-1">
-                            Sub-Headline (EN)
-                          </label>
-                          <input
-                            type="text"
-                            value={cmsData.siteContent.heroV2.headlineSub.EN}
-                            onChange={(e) =>
-                              updateCMSData((prev) => ({
-                                ...prev,
-                                siteContent: {
-                                  ...prev.siteContent,
-                                  heroV2: {
-                                    ...prev.siteContent.heroV2,
-                                    headlineSub: {
-                                      ...prev.siteContent.heroV2.headlineSub,
-                                      EN: e.target.value,
-                                    },
-                                  },
-                                },
-                              }))
-                            }
-                            className="w-full border border-zinc-300 rounded-xl p-2 font-semibold"
-                          />
-                        </div>
-                        <div>
-                          <label className="font-bold text-zinc-700 block mb-1">
-                            Sub-Headline (IT)
-                          </label>
-                          <input
-                            type="text"
-                            value={cmsData.siteContent.heroV2.headlineSub.IT}
-                            onChange={(e) =>
-                              updateCMSData((prev) => ({
-                                ...prev,
-                                siteContent: {
-                                  ...prev.siteContent,
-                                  heroV2: {
-                                    ...prev.siteContent.heroV2,
-                                    headlineSub: {
-                                      ...prev.siteContent.heroV2.headlineSub,
-                                      IT: e.target.value,
-                                    },
-                                  },
-                                },
-                              }))
-                            }
-                            className="w-full border border-zinc-300 rounded-xl p-2 font-semibold"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  )}
+
 
                   {contentSubTab === 'about' && (
                     <div className="bg-white p-6 rounded-2xl border border-zinc-200 space-y-4 text-xs">
@@ -2444,28 +2335,6 @@ export const CMSAdminPanel: React.FC = () => {
                           <option value='ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace'>
                             Technical Monospace
                           </option>
-                        </select>
-                      </div>
-
-                      <div>
-                        <label className="font-bold text-zinc-700 block mb-1">
-                          Default Layout Saat Dibuka
-                        </label>
-                        <select
-                          value={cmsData.theme.defaultDesktopVersion}
-                          onChange={(e) =>
-                            updateCMSData((prev) => ({
-                              ...prev,
-                              theme: {
-                                ...prev.theme,
-                                defaultDesktopVersion: e.target.value as 'v1' | 'v2',
-                              },
-                            }))
-                          }
-                          className="w-full border border-zinc-300 rounded-xl p-2.5 font-semibold"
-                        >
-                          <option value="v1">V1 Vibrant (Figma Style)</option>
-                          <option value="v2">V2 Editorial (Relife Style)</option>
                         </select>
                       </div>
 

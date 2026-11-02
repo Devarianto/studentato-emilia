@@ -183,33 +183,33 @@ export const CMSProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         font-family: var(--cms-font) !important;
       }
       /* Exact class token matches - safe from matching after:*, hover:*, focus:*, etc. */
-      .bg-\[\#FA5C38\], [class~="bg-[#FA5C38]"] {
+      .bg-\[\#FA5C38\], .bg-\[\#E04D26\], [class~="bg-[#FA5C38]"], [class~="bg-[#E04D26]"] {
         background-color: var(--cms-primary) !important;
       }
-      .text-\[\#FA5C38\], [class~="text-[#FA5C38]"] {
+      .text-\[\#FA5C38\], .text-\[\#E04D26\], [class~="text-[#FA5C38]"], [class~="text-[#E04D26]"] {
         color: var(--cms-primary) !important;
       }
-      .border-\[\#FA5C38\], [class~="border-[#FA5C38]"] {
+      .border-\[\#FA5C38\], .border-\[\#E04D26\], [class~="border-[#FA5C38]"], [class~="border-[#E04D26]"] {
         border-color: var(--cms-primary) !important;
       }
-      .hover\:bg-\[\#FA5C38\]:hover, [class~="hover:bg-[#FA5C38]"]:hover {
+      .hover\:bg-\[\#FA5C38\]:hover, .hover\:bg-\[\#E04D26\]:hover, [class~="hover:bg-[#FA5C38]"]:hover, [class~="hover:bg-[#E04D26]"]:hover {
         background-color: var(--cms-primary) !important;
       }
-      .hover\:text-\[\#FA5C38\]:hover, [class~="hover:text-[#FA5C38]"]:hover {
+      .hover\:text-\[\#FA5C38\]:hover, .hover\:text-\[\#E04D26\]:hover, [class~="hover:text-[#FA5C38]"]:hover, [class~="hover:text-[#E04D26]"]:hover {
         color: var(--cms-primary) !important;
       }
 
-      .bg-\[\#FFC83B\], [class~="bg-[#FFC83B]"] {
+      .bg-\[\#FFC83B\], .bg-\[\#D99426\], [class~="bg-[#FFC83B]"], [class~="bg-[#D99426]"] {
         background-color: var(--cms-secondary) !important;
       }
-      .text-\[\#FFC83B\], [class~="text-[#FFC83B]"] {
+      .text-\[\#FFC83B\], .text-\[\#D99426\], [class~="text-[#FFC83B]"], [class~="text-[#D99426]"] {
         color: var(--cms-secondary) !important;
       }
-      .border-\[\#FFC83B\], [class~="border-[#FFC83B]"] {
+      .border-\[\#FFC83B\], .border-\[\#D99426\], [class~="border-[#FFC83B]"], [class~="border-[#D99426]"] {
         border-color: var(--cms-secondary) !important;
       }
 
-      .bg-\[\#FFF8F0\], [class~="bg-[#FFF8F0]"] {
+      .bg-\[\#FFF8F0\], .bg-\[\#FAF8F5\], [class~="bg-[#FFF8F0]"], [class~="bg-[#FAF8F5]"] {
         background-color: var(--cms-bg) !important;
       }
       .bg-\[\#18181B\], [class~="bg-[#18181B]"] {

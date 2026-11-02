@@ -1,6 +1,6 @@
 import React from 'react';
 import { Language } from '../types';
-import { Star, MessageSquare, Award, ArrowRight } from 'lucide-react';
+import { Star, MessageSquare, ArrowRight, ShieldCheck } from 'lucide-react';
 import { useCMS } from '../context/CMSContext';
 
 interface AboutUsSectionProps {
@@ -13,12 +13,12 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ language }) => {
 
   const labels = {
     EN: {
-      linkToReviews: 'Read All Verified Student Reviews →',
-      exploreRooms: 'Explore Available Rooms',
+      linkToReviews: 'Read Verified Resident Experiences →',
+      exploreRooms: 'Browse All Rooms & Rates',
     },
     IT: {
-      linkToReviews: 'Leggi Tutte Le Recensioni Degli Studenti →',
-      exploreRooms: 'Esplora Le Camere',
+      linkToReviews: 'Leggi le Recensioni dei Residenti →',
+      exploreRooms: 'Esplora Tutte le Camere',
     },
   }[language];
 
@@ -31,79 +31,79 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ language }) => {
   };
 
   return (
-    <section id="about" className="py-16 sm:py-24 bg-[#FA5C38] text-white relative overflow-hidden">
-      <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-5 space-y-4">
-            <div className="relative rounded-3xl overflow-hidden border-4 border-white/20 shadow-2xl">
+    <section id="about" className="py-16 sm:py-24 bg-[#F4EFEA] text-stone-900 border-b border-stone-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          {/* Left Column: Authentic Photography & Testimonial Plaque */}
+          <div className="lg:col-span-5 space-y-5">
+            <div className="relative rounded-lg overflow-hidden border border-stone-300 shadow-sm bg-stone-900">
               <img
                 src={about.image}
-                alt="Studentato Emilia Community & Lounge"
-                className="w-full h-80 object-cover"
+                alt="Studentato Emilia Residence Community Lounge"
+                className="w-full h-80 sm:h-96 object-cover"
               />
             </div>
 
-            <div className="bg-white text-zinc-900 p-6 rounded-2xl shadow-xl border-2 border-[#FFC83B]">
-              <div className="flex items-center gap-3 mb-2">
-                <div className="w-10 h-10 rounded-xl bg-[#FA5C38]/10 text-[#FA5C38] flex items-center justify-center font-bold">
-                  <Award className="w-6 h-6 text-[#FA5C38]" />
+            {/* Endorsement Card: Solid, Paper-like, Dignified */}
+            <div className="bg-white p-5 rounded-lg border border-stone-200 shadow-xs">
+              <div className="flex items-center gap-3 mb-2.5">
+                <div className="w-9 h-9 rounded-md bg-[#F4EFEA] text-[#E04D26] flex items-center justify-center border border-stone-200">
+                  <ShieldCheck className="w-5 h-5 text-[#E04D26]" />
                 </div>
                 <div>
-                  <div className="flex text-amber-400">
+                  <div className="flex text-amber-500">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-current" />
+                      <Star key={i} className="w-3.5 h-3.5 fill-current" />
                     ))}
                   </div>
-                  <h4 className="font-extrabold text-sm text-zinc-900">
+                  <h4 className="font-serif font-semibold text-xs sm:text-sm text-stone-900 mt-0.5">
                     {about.socialProofRating[language]}
                   </h4>
                 </div>
               </div>
 
-              <p className="text-xs text-zinc-600 mb-4 leading-relaxed font-medium">
+              <p className="text-xs text-stone-600 mb-3.5 leading-relaxed">
                 {about.socialProofDesc[language]}
               </p>
 
               <a
                 href="#reviews"
                 onClick={handleScrollToReviews}
-                className="w-full inline-flex items-center justify-center gap-2 bg-[#FFC83B] hover:bg-[#eab308] text-zinc-950 font-extrabold text-xs py-2.5 px-4 rounded-xl transition-all shadow-md"
+                className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#E04D26] hover:text-[#CC3E18] hover:underline"
               >
-                <MessageSquare className="w-4 h-4 text-zinc-950" />
+                <MessageSquare className="w-3.5 h-3.5" />
                 <span>{labels.linkToReviews}</span>
               </a>
             </div>
           </div>
 
+          {/* Right Column: Editorial Narrative & Statistics */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="inline-block bg-white/20 backdrop-blur-md px-3.5 py-1 rounded-full text-xs font-black tracking-widest uppercase">
-              {about.eyebrow[language]}
+            <div className="inline-flex items-center gap-2 text-stone-500 text-[11px] font-semibold tracking-[0.18em] uppercase border-b border-stone-300 pb-1">
+              <span className="w-1.5 h-1.5 bg-[#E04D26] rounded-xs" />
+              <span>{about.eyebrow[language]}</span>
             </div>
 
-            <h2 className="text-3xl sm:text-5xl font-black tracking-tight leading-tight">
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-stone-900 leading-[1.18]">
               {about.heading[language]}
             </h2>
 
-            <p className="text-base sm:text-lg text-white/90 leading-relaxed font-normal">
-              {about.paragraph1[language]}
-            </p>
+            <div className="space-y-4 text-stone-600 text-sm sm:text-base leading-relaxed">
+              <p>{about.paragraph1[language]}</p>
+              <p className="text-stone-500">{about.paragraph2[language]}</p>
+            </div>
 
-            <p className="text-sm sm:text-base text-white/80 leading-relaxed font-normal">
-              {about.paragraph2[language]}
-            </p>
-
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 border-t border-white/20">
+            {/* Metric Grid: Hairline dividers, crisp typography */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-stone-200">
               {about.stats.map((st, i) => (
                 <div
                   key={i}
-                  className="bg-white/10 backdrop-blur-md p-3.5 rounded-2xl border border-white/10 text-center"
+                  className="bg-white p-3.5 rounded-md border border-stone-200 shadow-2xs"
                 >
-                  <span className="text-2xl sm:text-3xl font-black text-[#FFC83B] block">
+                  <span className="font-serif text-2xl sm:text-3xl font-bold text-[#E04D26] block">
                     {st.val}
                   </span>
-                  <span className="text-[11px] font-bold text-white/90 block mt-0.5">
+                  <span className="text-[11px] font-medium text-stone-600 block mt-1 leading-snug">
                     {st.label[language]}
                   </span>
                 </div>
@@ -113,10 +113,10 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ language }) => {
             <div className="pt-2">
               <a
                 href="#rooms"
-                className="inline-flex items-center gap-2 bg-white text-[#FA5C38] hover:bg-zinc-100 font-extrabold px-6 py-3 rounded-full text-sm shadow-lg transition-all"
+                className="inline-flex items-center gap-2 bg-[#E04D26] hover:bg-[#CC3E18] text-white font-semibold px-5 py-3 rounded-md text-xs transition-colors shadow-xs"
               >
                 <span>{labels.exploreRooms}</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-3.5 h-3.5" />
               </a>
             </div>
           </div>

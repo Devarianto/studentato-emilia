@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { Language, DesktopVersion, Room, SearchFilterState, Review } from './types';
+import { useState, useEffect } from 'react';
+import { Language, Room, SearchFilterState, Review } from './types';
 import { TopUtilityBar } from './components/TopUtilityBar';
 import { Header } from './components/Header';
 import { HeroV1 } from './components/HeroV1';
-import { HeroV2 } from './components/HeroV2';
 import { AboutUsSection } from './components/AboutUsSection';
 import { RoomCatalogSection } from './components/RoomCatalogSection';
 import { SpecialOffersSection } from './components/SpecialOffersSection';
@@ -32,7 +31,6 @@ function MainAppContent() {
   } = useCMS();
 
   const [language, setLanguage] = useState<Language>('EN');
-  const [desktopVersion, setDesktopVersion] = useState<DesktopVersion>('v1');
   const [searchFilter, setSearchFilter] = useState<SearchFilterState>({
     city: 'All',
     roomType: 'All',
@@ -49,12 +47,6 @@ function MainAppContent() {
       setLanguage(cmsData.theme.defaultLanguage);
     }
   }, [cmsData.theme.defaultLanguage]);
-
-  useEffect(() => {
-    if (cmsData.theme.defaultDesktopVersion) {
-      setDesktopVersion(cmsData.theme.defaultDesktopVersion);
-    }
-  }, [cmsData.theme.defaultDesktopVersion]);
 
   // If user is on /admin (or /wp-admin), render the standalone CMS Portal (Login or Dashboard)
   if (activeRoute === 'admin') {
@@ -91,22 +83,22 @@ function MainAppContent() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FFF8F0] text-zinc-900 font-sans selection:bg-[#FFC83B] selection:text-zinc-950">
+    <div className="min-h-screen bg-[#FAF8F5] text-stone-900 font-sans selection:bg-[#FEE4D6] selection:text-stone-900">
       {/* WordPress-style Top Admin Bar — ONLY visible if an admin is currently logged in */}
       {isAuthenticated && (
-        <div className="bg-[#1D2327] text-white text-xs px-4 py-1.5 flex items-center justify-between border-b border-zinc-700">
+        <div className="bg-[#1C1917] text-white text-xs px-4 py-1.5 flex items-center justify-between border-b border-stone-700">
           <div className="flex items-center gap-3">
             <button
               onClick={() => navigateTo('admin')}
-              className="inline-flex items-center gap-1.5 font-extrabold text-[#FFC83B] hover:underline"
+              className="inline-flex items-center gap-1.5 font-bold text-[#E6AA38] hover:underline"
             >
               <LayoutDashboard className="w-3.5 h-3.5" />
               <span>Buka Dashboard CMS (/admin)</span>
             </button>
           </div>
           <div className="flex items-center gap-3">
-            <span className="text-zinc-300 hidden sm:inline">
-              Login sebagai: <strong>{currentUser.name}</strong> ({currentRole.name})
+            <span className="text-stone-300 hidden sm:inline">
+              Login sebagai: <strong>{currentUser?.name || 'Admin'}</strong> ({currentRole?.name || 'Administrator'})
             </span>
             <button
               onClick={logout}
@@ -123,29 +115,19 @@ function MainAppContent() {
       <TopUtilityBar
         language={language}
         setLanguage={setLanguage}
-        desktopVersion={desktopVersion}
-        setDesktopVersion={setDesktopVersion}
       />
 
       {/* Sticky Main Header */}
       <Header language={language} onOpenBookingModal={handleOpenBookingModal} />
 
-      {/* Main Public Website Content */}
+      {/* Main Public Website Content (V1 Fixed Version) */}
       <main>
-        {desktopVersion === 'v1' ? (
-          <HeroV1
-            language={language}
-            onSearch={handleSearch}
-            onOpenVideoModal={() => setIsVideoModalOpen(true)}
-            onOpenBookingModal={handleOpenBookingModal}
-          />
-        ) : (
-          <HeroV2
-            language={language}
-            onSearch={handleSearch}
-            onOpenBookingModal={handleOpenBookingModal}
-          />
-        )}
+        <HeroV1
+          language={language}
+          onSearch={handleSearch}
+          onOpenVideoModal={() => setIsVideoModalOpen(true)}
+          onOpenBookingModal={handleOpenBookingModal}
+        />
 
         <AboutUsSection language={language} />
 
@@ -164,23 +146,25 @@ function MainAppContent() {
 
         <ReviewSection
           language={language}
-          onOpenWriteReviewModal={() => setIsWriteReviewOpen(true)}
+          onOpenWriteReview={() => setIsWriteReviewOpen(true)}
         />
 
-        <FAQSection language={language} />
-
         <LocationSection language={language} />
+
+        <FAQSection language={language} />
       </main>
 
-      {/* Footer (Includes discrete Admin Login link at the very bottom) */}
-      <Footer language={language} />
+      {/* Footer */}
+      <Footer language={language} onOpenBookingModal={handleOpenBookingModal} />
 
       {/* Interactive Modals */}
-      <RoomDetailModal
-        room={selectedRoom}
-        language={language}
-        onClose={() => setSelectedRoom(null)}
-      />
+      {selectedRoom && (
+        <RoomDetailModal
+          room={selectedRoom}
+          language={language}
+          onClose={() => setSelectedRoom(null)}
+        />
+      )}
 
       {isWriteReviewOpen && (
         <WriteReviewModal
@@ -190,7 +174,13 @@ function MainAppContent() {
         />
       )}
 
-      <VideoModal isOpen={isVideoModalOpen} onClose={() => setIsVideoModalOpen(false)} />
+      {isVideoModalOpen && (
+        <VideoModal
+          isOpen={isVideoModalOpen}
+          onClose={() => setIsVideoModalOpen(false)}
+          videoTitle="Studentato Emilia — Virtual Campus Residence Tour"
+        />
+      )}
     </div>
   );
 }

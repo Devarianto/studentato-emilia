@@ -1,54 +1,55 @@
 @import "tailwindcss";
 
+@theme {
+  --font-serif: 'Playfair Display', Georgia, Cambria, 'Times New Roman', serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #1c1917;
+    background-color: #FAF8F5;
   }
 
-  /* Accessibility: Focus indicators MUST be highly visible and NOT BLUE */
+  /* Accessibility: Focus indicators */
   :focus-visible {
-    outline: 3px solid #FA5C38 !important;
-    outline-offset: 3px !important;
-    box-shadow: 0 0 0 2px rgba(250, 92, 56, 0.3) !important;
+    outline: 2px solid #E04D26 !important;
+    outline-offset: 2px !important;
   }
 
   /* Custom selection highlight */
   ::selection {
-    background-color: #FFC83B;
-    color: #121212;
+    background-color: #FEE4D6;
+    color: #1C1917;
   }
 }
 
-/* Stamp rotating animation */
-@keyframes spin-slow {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Serif font utility */
+.font-serif {
+  font-family: 'Playfair Display', Georgia, Cambria, 'Times New Roman', serif;
 }
 
-.animate-spin-slow {
-  animation: spin-slow 20s linear infinite;
+.font-sans {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-/* Custom scrollbar */
+/* Custom subtle scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #FDF5EC;
+  background: #F4EFEA;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #FA5C38;
-  border-radius: 4px;
+  background: #D6D3D1;
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #E04B28;
+  background: #A8A29E;
 }

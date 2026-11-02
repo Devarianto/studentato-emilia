@@ -520,12 +520,12 @@
     }
   },
   "theme": {
-    "primaryColor": "#FA5C38",
-    "secondaryColor": "#FFC83B",
-    "backgroundColor": "#FFF8F0",
-    "topbarColor": "#18181B",
-    "footerColor": "#09090B",
-    "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
+    "primaryColor": "#E04D26",
+    "secondaryColor": "#D99426",
+    "backgroundColor": "#FAF8F5",
+    "topbarColor": "#1C1917",
+    "footerColor": "#181614",
+    "fontFamily": "\"Plus Jakarta Sans\", system-ui, sans-serif",
     "defaultDesktopVersion": "v1",
     "defaultLanguage": "EN",
     "customCss": ""

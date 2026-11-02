@@ -17,57 +17,70 @@ export const WhyChooseUsSection: React.FC<WhyChooseUsSectionProps> = ({
   const amenities = cmsData.amenities;
 
   const watchTourLabel =
-    language === 'EN' ? 'Watch Campus Video Tour' : 'Guarda Tour Video Residenza';
+    language === 'EN' ? 'Watch Virtual Residence Tour' : 'Guarda Tour Video Residenza';
 
   return (
-    <section id="services" className="py-16 sm:py-24 bg-[#FA5C38] text-white relative overflow-hidden">
+    <section id="services" className="py-16 sm:py-24 bg-[#181614] text-stone-100 border-b border-stone-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
         <div className="max-w-3xl mb-12 space-y-3">
-          <span className="inline-block bg-white/20 backdrop-blur-md px-3.5 py-1 rounded-full text-xs font-black tracking-widest uppercase text-white">
-            {services.eyebrow[language]}
-          </span>
-          <h2 className="text-3xl sm:text-5xl font-black tracking-tight leading-tight">
+          <div className="inline-flex items-center gap-2 text-stone-400 text-[11px] font-semibold tracking-[0.18em] uppercase border-b border-stone-700 pb-1">
+            <span className="w-1.5 h-1.5 bg-[#E04D26] rounded-xs" />
+            <span>{services.eyebrow[language]}</span>
+          </div>
+
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight text-white">
             {services.titleHighlight[language]} <br />
-            <span className="text-[#FFC83B]">{services.titleSub[language]}</span>
+            <span className="text-[#E04D26] italic font-serif font-normal">{services.titleSub[language]}</span>
           </h2>
-          <p className="text-sm sm:text-base text-white/90 leading-relaxed">
+
+          <p className="text-sm sm:text-base text-stone-400 leading-relaxed font-normal">
             {services.subtitle[language]}
           </p>
         </div>
 
+        {/* Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {/* Amenities Grid */}
+          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
             {amenities.map((item, idx) => (
               <div
                 key={idx}
-                className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/15 hover:bg-white/20 transition-all space-y-2"
+                className="bg-stone-900/90 p-5 rounded-lg border border-stone-800 hover:border-stone-700 transition-colors space-y-2"
               >
-                <div className="text-3xl font-black text-[#FFC83B]">{item.number}</div>
-                <h3 className="font-extrabold text-lg text-white">{item.title[language]}</h3>
-                <p className="text-xs text-white/80 leading-relaxed">{item.desc[language]}</p>
+                <div className="font-serif text-xl font-normal text-[#E04D26] tracking-wider">
+                  {item.number}
+                </div>
+                <h3 className="font-serif font-semibold text-base text-white">
+                  {item.title[language]}
+                </h3>
+                <p className="text-xs text-stone-400 leading-relaxed font-normal">
+                  {item.desc[language]}
+                </p>
               </div>
             ))}
           </div>
 
+          {/* Right Column: Architectural Video Showcase */}
           <div className="lg:col-span-5 relative">
-            <div className="relative rounded-3xl overflow-hidden border-4 border-white/20 shadow-2xl bg-zinc-900 group h-80 sm:h-[460px]">
+            <div className="relative rounded-lg overflow-hidden border border-stone-800 bg-stone-950 group h-80 sm:h-[440px]">
               <img
                 src={services.showcaseImage}
-                alt="Studentato Emilia Living Space"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
+                alt="Studentato Emilia Living Space Torino"
+                className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500 opacity-80"
               />
-              <div className="absolute inset-0 bg-black/40" />
+              <div className="absolute inset-0 bg-stone-950/40" />
 
               <button
                 onClick={onOpenVideoModal}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-[#FFC83B] text-zinc-950 flex items-center justify-center shadow-2xl hover:scale-110 transition-transform group/btn"
-                aria-label="Play video tour"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-white/90 hover:bg-white text-stone-900 flex items-center justify-center shadow-lg transition-transform hover:scale-105"
+                aria-label="Play residence video tour"
               >
-                <Play className="w-8 h-8 fill-current ml-1 group-hover/btn:scale-110 transition-transform text-zinc-950" />
+                <Play className="w-5 h-5 fill-current ml-0.5 text-[#E04D26]" />
               </button>
 
-              <div className="absolute bottom-6 left-6 right-6 text-center">
-                <span className="bg-zinc-950/80 backdrop-blur-md text-white text-xs font-bold px-4 py-2 rounded-full border border-white/20 inline-block">
+              <div className="absolute bottom-4 left-4 right-4 text-center">
+                <span className="bg-stone-900/90 text-stone-300 text-[11px] font-medium px-3.5 py-1.5 rounded border border-stone-700 inline-block">
                   {watchTourLabel}
                 </span>
               </div>

@@ -15,15 +15,16 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ language }) => {
 
   const content = {
     EN: {
-      eyebrow: 'FAQ',
-      title: 'Frequently Asked Questions',
+      eyebrow: 'FREQUENT INQUIRIES',
+      title: 'Essential Resident Information',
       subtitle:
-        'Everything you need to know about booking, contracts, and student living at Studentato Emilia.',
+        'Clarity on leases, all-inclusive utility bills, move-in procedures, and international student registration.',
     },
     IT: {
       eyebrow: 'DOMANDE FREQUENTI',
-      title: 'Domande Frequenti (FAQ)',
-      subtitle: 'Tutto quello che c’è da sapere su prenotazioni, contratti e vita in residenza.',
+      title: 'Informazioni Essenziali per i Residenti',
+      subtitle:
+        'Dettagli su contratti, utenze tutto incluso, registrazione studenti e regole della residenza.',
     },
   }[language];
 
@@ -32,45 +33,52 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ language }) => {
   };
 
   return (
-    <section id="faq" className="py-16 sm:py-24 bg-[#FA5C38] text-white relative overflow-hidden">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center space-y-3 mb-12">
-          <span className="inline-block bg-white/20 backdrop-blur-md px-3.5 py-1 rounded-full text-xs font-black tracking-widest uppercase">
-            {content.eyebrow}
-          </span>
-          <h2 className="text-3xl sm:text-5xl font-black tracking-tight leading-tight">
+    <section id="faq" className="py-16 sm:py-24 bg-[#F4EFEA] border-b border-stone-200">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="space-y-3 mb-12 text-center max-w-2xl mx-auto">
+          <div className="inline-flex items-center gap-2 text-stone-500 text-[11px] font-semibold tracking-[0.18em] uppercase border-b border-stone-300 pb-1">
+            <span className="w-1.5 h-1.5 bg-[#E04D26] rounded-xs" />
+            <span>{content.eyebrow}</span>
+          </div>
+
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight text-stone-900">
             {content.title}
           </h2>
-          <p className="text-sm sm:text-base text-white/90 max-w-2xl mx-auto font-normal">
+
+          <p className="text-sm sm:text-base text-stone-600 leading-relaxed font-normal">
             {content.subtitle}
           </p>
         </div>
 
-        <div className="space-y-4">
+        {/* Minimalist Accordion */}
+        <div className="space-y-3">
           {faqs.map((item) => {
             const isOpen = openId === item.id;
             return (
               <div
                 key={item.id}
-                className="bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 overflow-hidden transition-all duration-300"
+                className="bg-white rounded-lg border border-stone-200 overflow-hidden shadow-2xs transition-all"
               >
                 <button
                   onClick={() => toggleAccordion(item.id)}
-                  className="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 font-extrabold text-base sm:text-lg hover:bg-white/15 transition-colors outline-none"
+                  className="w-full text-left p-5 flex items-center justify-between gap-4 hover:bg-stone-50/80 transition-colors outline-none"
                   aria-expanded={isOpen}
                 >
-                  <span className="text-white">{item.question[language]}</span>
-                  <div className="w-8 h-8 rounded-full bg-[#FFC83B] text-zinc-950 flex items-center justify-center shrink-0 shadow-md">
+                  <span className="font-serif font-semibold text-stone-900 text-sm sm:text-base">
+                    {item.question[language]}
+                  </span>
+                  <div className="w-6 h-6 rounded-full bg-stone-100 border border-stone-200 text-stone-700 flex items-center justify-center shrink-0">
                     {isOpen ? (
-                      <Minus className="w-4 h-4 font-bold" />
+                      <Minus className="w-3.5 h-3.5 text-[#E04D26]" />
                     ) : (
-                      <Plus className="w-4 h-4 font-bold" />
+                      <Plus className="w-3.5 h-3.5 text-stone-600" />
                     )}
                   </div>
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 pb-6 sm:px-6 text-xs sm:text-sm text-white/90 leading-relaxed border-t border-white/10 pt-4 animate-fade-in">
+                  <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-stone-600 leading-relaxed border-t border-stone-100">
                     {item.answer[language]}
                   </div>
                 )}
