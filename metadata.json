@@ -1,0 +1,6 @@
+{
+  "name": "Studentato Emilia",
+  "description": "Modern student housing & residence platform in Emilia-Romagna (Bologna, Modena, Parma).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,625 @@
+{
+  "rooms": [
+    {
+      "id": "room-1",
+      "name": "Room Type A - Deluxe Single Suite",
+      "type": "single_deluxe",
+      "city": "Torino",
+      "priceMonth": 580,
+      "sizeSqM": 18,
+      "availableFrom": "Sept 2025",
+      "badge": "Popular in Torino",
+      "description": {
+        "EN": "Spacious private single room at Viale della Rimembranza 2, Torino. Equipped with a queen bed, ergonomic study desk, high-speed fiber internet, and private balcony overlooking Torino.",
+        "IT": "Ampia camera singola privata in Viale della Rimembranza 2, Torino. Dotata di letto queen, scrivania ergonomica da studio, internet fibra ad alta velocità e balcone privato."
+      },
+      "images": [
+        "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=1000&q=80"
+      ],
+      "features": [
+        "Private Balcony",
+        "AC & Heating",
+        "Ergonomic Study Desk",
+        "Weekly Housekeeping",
+        "En-suite Bath Option"
+      ],
+      "isPopular": true
+    },
+    {
+      "id": "room-2",
+      "name": "Room Type B - Standard Single Study",
+      "type": "single_standard",
+      "city": "Torino",
+      "priceMonth": 480,
+      "sizeSqM": 14,
+      "availableFrom": "Immediate",
+      "description": {
+        "EN": "Cozy and quiet single room designed for focused studying at Studentato Emilia Torino. Features custom modular storage, large window with natural sunlight, and air conditioning.",
+        "IT": "Accogliente e tranquilla camera singola progettata per lo studio presso Studentato Emilia Torino. Dispone di armadio modulare, grande finestra e aria condizionata."
+      },
+      "images": [
+        "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=1000&q=80"
+      ],
+      "features": [
+        "1Gbps Fiber Wi-Fi",
+        "AC & Climate Control",
+        "Ergonomic Chair",
+        "Shared Gourmet Kitchen"
+      ],
+      "isPopular": false
+    },
+    {
+      "id": "room-3",
+      "name": "Room Type C - Shared Twin Studio",
+      "type": "shared_twin",
+      "city": "Torino",
+      "priceMonth": 390,
+      "sizeSqM": 24,
+      "availableFrom": "Sept 2025",
+      "badge": "Budget Friendly",
+      "description": {
+        "EN": "Comfortable double room for two students with twin beds, dual study desks, spacious wardrobe, and en-suite private bathroom in Torino residence.",
+        "IT": "Confortevole camera doppia per due studenti con letti singoli, doppia scrivania, ampio armadio e bagno privato in camera nella residenza di Torino."
+      },
+      "images": [
+        "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=1000&q=80"
+      ],
+      "features": [
+        "Dual Study Desks",
+        "En-suite Bathroom",
+        "Smart Keycard Access",
+        "All Bills Included"
+      ],
+      "isPopular": true
+    },
+    {
+      "id": "room-4",
+      "name": "Room Type D - Executive Studio Apartment",
+      "type": "studio",
+      "city": "Torino",
+      "priceMonth": 690,
+      "sizeSqM": 28,
+      "availableFrom": "Oct 2025",
+      "badge": "Exclusive Residence",
+      "description": {
+        "EN": "Self-contained studio apartment featuring private kitchenette, modern private bathroom, smart TV, and panoramic window view over Torino.",
+        "IT": "Monolocale indipendente dotato di angolo cottura privato, bagno moderno, smart TV e vista panoramica su Torino."
+      },
+      "images": [
+        "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1000&q=80"
+      ],
+      "features": [
+        "Private Kitchenette",
+        "Smart TV",
+        "In-Unit Washer Option",
+        "Weekly Linen Change"
+      ],
+      "isPopular": false
+    },
+    {
+      "id": "room-5",
+      "name": "Room Type E - Single Campus Suite",
+      "type": "single_deluxe",
+      "city": "Torino",
+      "priceMonth": 520,
+      "sizeSqM": 16,
+      "availableFrom": "Sept 2025",
+      "description": {
+        "EN": "Modern single suite located right at Viale della Rimembranza 2, Torino. Features acoustic insulation and soundproof windows.",
+        "IT": "Moderna suite singola situata in Viale della Rimembranza 2, Torino. Dispone di isolamento acustico."
+      },
+      "images": [
+        "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=80"
+      ],
+      "features": [
+        "Soundproof Insulation",
+        "Politecnico & UniTO Proximity",
+        "1Gbps Fiber Wi-Fi",
+        "24/7 Security"
+      ],
+      "isPopular": false
+    }
+  ],
+  "reviews": [
+    {
+      "id": "rev-1",
+      "studentName": "Alessandro M.",
+      "university": "Politecnico di Torino",
+      "city": "Torino",
+      "roomType": "Room Type A - Deluxe Single Suite",
+      "rating": 5,
+      "date": "12 June 2025",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80",
+      "comment": {
+        "EN": "Living at Studentato Emilia in Viale della Rimembranza 2, Torino made my Master’s year incredible. Superfast Wi-Fi, quiet study areas, and great communal spaces to make friends!",
+        "IT": "Vivere al Studentato Emilia in Viale della Rimembranza 2 a Torino ha reso il mio anno di Magistrale fantastico. Wi-Fi velocissimo, aule studio silenziose e bellissimi spazi comuni!"
+      },
+      "verified": true
+    },
+    {
+      "id": "rev-2",
+      "studentName": "Sara B.",
+      "university": "University of Turin (UniTO)",
+      "city": "Torino",
+      "roomType": "Room Type B - Standard Single Study",
+      "rating": 5,
+      "date": "28 May 2025",
+      "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=200&q=80",
+      "comment": {
+        "EN": "The location at Viale della Rimembranza 2 in Torino is unbeatable! Only minutes to faculties. All utilities are included in one price, so no surprise bills.",
+        "IT": "La posizione in Viale della Rimembranza 2 a Torino è imbattibile! A pochissimi minuti dalle facoltà. Tutte le utenze sono incluse in una singola rata, zero sorprese."
+      },
+      "verified": true
+    },
+    {
+      "id": "rev-3",
+      "studentName": "Luca F.",
+      "university": "Politecnico di Torino",
+      "city": "Torino",
+      "roomType": "Room Type D - Executive Studio Apartment",
+      "rating": 5,
+      "date": "10 April 2025",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
+      "comment": {
+        "EN": "Extremely clean facilities and very responsive management team in Torino. The gym and rooftop lounge are huge bonuses after long lecture days.",
+        "IT": "Strutture pulitissime e staff di gestione sempre disponibile a Torino. La palestra e la terrazza rooftop sono fantastici dopo una lunga giornata di lezioni."
+      },
+      "verified": true
+    },
+    {
+      "id": "rev-4",
+      "studentName": "Giulia R.",
+      "university": "Erasmus Student (UniTO)",
+      "city": "Torino",
+      "roomType": "Room Type C - Shared Twin Studio",
+      "rating": 5,
+      "date": "15 March 2025",
+      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80",
+      "comment": {
+        "EN": "The room layout is smart and modern. My roommate and I had plenty of personal space and privacy. Highly recommended for international students in Torino!",
+        "IT": "Il layout della stanza è intelligente e moderno. Io e la mia compagna di stanza avevamo tutto lo spazio personale necessario. Consigliatissimo per studenti a Torino!"
+      },
+      "verified": true
+    },
+    {
+      "id": "rev-5",
+      "studentName": "Matteo K.",
+      "university": "IAAD Torino",
+      "city": "Torino",
+      "roomType": "Room Type E - Single Campus Suite",
+      "rating": 4,
+      "date": "02 Feb 2025",
+      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80",
+      "comment": {
+        "EN": "Great modern atmosphere. The laundry room booking system is super easy on mobile, and the study lounge is open 24/7.",
+        "IT": "Ottima atmosfera moderna. Il sistema di prenotazione lavanderia da smartphone è semplicissimo e l’aula studio è aperta h24."
+      },
+      "verified": true
+    }
+  ],
+  "faqs": [
+    {
+      "id": "faq-1",
+      "category": "location",
+      "question": {
+        "EN": "Where is Studentato Emilia located?",
+        "IT": "Dove si trova Studentato Emilia?"
+      },
+      "answer": {
+        "EN": "Studentato Emilia is located at Viale della Rimembranza 2, Torino, Italy (Region: ITALY). Situated in a prime student quarter with direct transit to Politecnico di Torino and University of Turin (UniTO) campuses.",
+        "IT": "Studentato Emilia si trova in Viale della Rimembranza 2, Torino, Italia (Regione: ITALIA). Situato in una posizione strategica per raggiungere il Politecnico di Torino e l’Università degli Studi di Torino (UniTO)."
+      }
+    },
+    {
+      "id": "faq-2",
+      "category": "booking",
+      "question": {
+        "EN": "How do I book a room and what is required?",
+        "IT": "Come posso prenotare una stanza e quali documenti servono?"
+      },
+      "answer": {
+        "EN": "You can reserve online directly through our platform in 3 easy steps: select your desired room, fill in your enrollment details (student ID or acceptance letter), and pay the deposit. For support call 0039 3451214597 or email info@studentatoemilia.it.",
+        "IT": "Puoi prenotare online in 3 semplici passaggi: seleziona la stanza, inserisci i dati universitari e versa il deposito. Per informazioni chiama 0039 3451214597 o scrivi a info@studentatoemilia.it."
+      }
+    },
+    {
+      "id": "faq-3",
+      "category": "facilities",
+      "question": {
+        "EN": "What facilities and utilities are included in the monthly price?",
+        "IT": "Quali servizi e utenze sono inclusi nel prezzo mensile?"
+      },
+      "answer": {
+        "EN": "All-inclusive pricing! Includes high-speed 1Gbps Fiber Wi-Fi, electricity, water, heating, air conditioning, weekly communal area cleaning, 24/7 access to quiet study rooms, game lounge, fitness room, and bicycle storage.",
+        "IT": "Tutto incluso! Il canone comprende Wi-Fi Fibra 1Gbps, luce, acqua, riscaldamento, aria condizionata, pulizia settimanale aree comuni, accesso h24 alle aule studio, sala giochi, palestra e deposito bici."
+      }
+    },
+    {
+      "id": "faq-4",
+      "category": "booking",
+      "question": {
+        "EN": "Is there a minimum stay period for contracts?",
+        "IT": "È previsto un periodo minimo di permanenza?"
+      },
+      "answer": {
+        "EN": "Our standard contracts align with university semesters: 5-month contracts for semester stays, or 10 to 12-month annual contracts. Short-term summer stays (1 to 3 months) are also available upon request.",
+        "IT": "I contratti standard seguono il calendario accademico: 5 mesi per singolo semestre oppure 10-12 mesi per l’anno accademico. Su richiesta sono disponibili soggiorni estivi brevi (1-3 mesi)."
+      }
+    },
+    {
+      "id": "faq-5",
+      "category": "payments",
+      "question": {
+        "EN": "Can international students pay without an Italian bank account?",
+        "IT": "Gli studenti internazionali possono pagare senza conto bancario italiano?"
+      },
+      "answer": {
+        "EN": "Yes! We accept credit cards, SEPA bank transfers, Wise, PayPal, and international online payment gateways without extra currency exchange fees.",
+        "IT": "Sì! Accettiamo carte di credito, bonifici SEPA, Wise, PayPal e i principali gateway di pagamento internazionali senza commissioni di cambio aggiuntive."
+      }
+    }
+  ],
+  "locations": [
+    {
+      "city": "Torino",
+      "address": "Viale della Rimembranza 2, 10133 Torino TO, Italy",
+      "distanceToCampus": "5 mins to Politecnico di Torino & UniTO Faculties",
+      "metroBusAccess": "Tram 4 & Bus 18 at doorstep (Torino Porta Nuova 8 mins)",
+      "mapEmbedUrl": "https://maps.google.com/maps?q=Viale+della+Rimembranza+2+Torino+Italy&t=&z=15&ie=UTF8&iwloc=&output=embed",
+      "highlights": [
+        "Torino Campus Hub",
+        "24/7 Study Lounge",
+        "Panoramic City Terrace",
+        "Bicycle Garage"
+      ],
+      "image": "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=1000&q=80"
+    }
+  ],
+  "amenities": [
+    {
+      "number": "01",
+      "title": {
+        "EN": "Authentic Stays",
+        "IT": "Soggiorni Autentici"
+      },
+      "desc": {
+        "EN": "High-quality furnished rooms in strategic student zones with high-speed fiber internet and modern ergonomic design.",
+        "IT": "Camere arredate con cura in posizioni strategiche con Wi-Fi fibra superveloce e design ergonomico moderno."
+      }
+    },
+    {
+      "number": "02",
+      "title": {
+        "EN": "Budget Friendly Comfort",
+        "IT": "Comfort Accessibile"
+      },
+      "desc": {
+        "EN": "Transparent, all-inclusive monthly pricing with zero hidden utility costs or agency commissions.",
+        "IT": "Tariffe mensili trasparenti e tutto incluso, senza spese nascoste per utenze o commissioni di agenzia."
+      }
+    },
+    {
+      "number": "03",
+      "title": {
+        "EN": "Flexible Booking",
+        "IT": "Prenotazione Flessibile"
+      },
+      "desc": {
+        "EN": "Custom contract lengths designed for semester stay, annual academic year, or short exchange programs.",
+        "IT": "Contratti flessibili adatti al singolo semestre, all’anno accademico intero o a programmi di scambio."
+      }
+    },
+    {
+      "number": "04",
+      "title": {
+        "EN": "All-Inclusive Services",
+        "IT": "Servizi Tutto Incluso"
+      },
+      "desc": {
+        "EN": "Electricity, water, heating, AC, weekly cleaning, and 24/7 maintenance support all covered in one payment.",
+        "IT": "Elettricità, acqua, riscaldamento, aria condizionata, pulizie e assistenza h24 compresi nel canone."
+      }
+    },
+    {
+      "number": "05",
+      "title": {
+        "EN": "Vibrant Community",
+        "IT": "Community Dinamica"
+      },
+      "desc": {
+        "EN": "Regular student social events, study groups, rooftop BBQ nights, and international student networking.",
+        "IT": "Eventi sociali settimanali, gruppi di studio, serate sul rooftop e un’atmosfera internazionale stimolante."
+      }
+    }
+  ],
+  "siteContent": {
+    "contact": {
+      "topLocationText": "TORINO, ITALY • VIALE DELLA RIMEMBRANZA 2",
+      "phone": "0039 3451214597",
+      "email": "info@studentatoemilia.it",
+      "website": "studentatoemilia.it",
+      "address": "Viale della Rimembranza 2, Torino (10133), Italy",
+      "regionText": "Region/State: ITALY • City: TORINO",
+      "copyright": {
+        "EN": "© 2025 Studentato Emilia. All rights reserved.",
+        "IT": "© 2025 Studentato Emilia. Tutti i diritti riservati."
+      },
+      "tagline": {
+        "EN": "Premier Student Residence & Living Spaces in Torino, Italy.",
+        "IT": "Residenza Universitaria e Alloggi di Pregio a Torino, Italia."
+      }
+    },
+    "heroV1": {
+      "badge": {
+        "EN": "Premier Student Residence • Torino, Italy",
+        "IT": "Residenza Universitaria di Pregio • Torino, Italia"
+      },
+      "titleHighlight": {
+        "EN": "Find Your Room",
+        "IT": "Trova La Tua Stanza"
+      },
+      "titleSub": {
+        "EN": "At Viale della Rimembranza 2, Torino.",
+        "IT": "In Viale della Rimembranza 2, Torino."
+      },
+      "description": {
+        "EN": "All-inclusive furnished student rooms, private suites, and executive studios in Torino, Italy. Located close to Politecnico di Torino and UniTO campuses.",
+        "IT": "Camere arredate tutto incluso, monolocali ed esclusive suite per studenti a Torino, vicino al Politecnico e alle facoltà UniTO."
+      },
+      "availabilityTag": {
+        "EN": "12 Rooms Available in Torino for Fall 2025",
+        "IT": "12 Camere Disponibili a Torino per l’Autunno 2025"
+      },
+      "heroImage": "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=1000&q=80",
+      "cardEyebrow": "TORINO CAMPUS RESIDENCE",
+      "cardTitle": "Deluxe Single Suite with Balcony",
+      "cardSubtitle": "4 mins walk to Campus Hub",
+      "cardPrice": "€580",
+      "features": {
+        "EN": [
+          "All Utilities Included",
+          "1Gbps Fiber Wi-Fi",
+          "Zero Agency Fees",
+          "24/7 Study Lounges"
+        ],
+        "IT": [
+          "Tutte le Utenze Incluse",
+          "Wi-Fi Fibra 1Gbps",
+          "Zero Spese di Agenzia",
+          "Aule Studio h24"
+        ]
+      }
+    },
+    "heroV2": {
+      "eyebrow": {
+        "EN": "EDITORIAL LIVING CONCEPT • TORINO, ITALY",
+        "IT": "CONCEPT ABITATIVO EDITORIALE • TORINO, ITALIA"
+      },
+      "headlineMain": {
+        "EN": "Curated Student Living",
+        "IT": "Vivere Lo Studio In Modo Curato"
+      },
+      "headlineSub": {
+        "EN": "At Viale della Rimembranza 2, Torino.",
+        "IT": "In Viale della Rimembranza 2, Torino."
+      },
+      "paragraph": {
+        "EN": "Designed specifically for Italian and international students seeking high-comfort housing in Torino, Italy. Located minutes from Politecnico di Torino & UniTO faculties with zero hidden fees.",
+        "IT": "Progettato su misura per studenti italiani ed internazionali in cerca di un’esperienza abitativa premium a Torino, vicino al Politecnico e all’Università di Torino."
+      },
+      "trustRating": {
+        "EN": "4.9/5 Student Rating across 280+ stays",
+        "IT": "Valutazione 4.9/5 da oltre 280 studenti"
+      },
+      "heroImage": "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1200&q=80",
+      "featuredTitle": "Viale Rimembranza Deluxe Suite",
+      "featuredSubtitle": "Viale della Rimembranza 2, Torino • Minutes to Politecnico"
+    },
+    "about": {
+      "eyebrow": {
+        "EN": "ABOUT STUDENTATO EMILIA",
+        "IT": "CHI SIAMO • STUDENTATO EMILIA"
+      },
+      "heading": {
+        "EN": "Crafted for Modern Student Living in Torino, Italy",
+        "IT": "Abitare Lo Studio Con Qualità E Serenità a Torino"
+      },
+      "paragraph1": {
+        "EN": "Studentato Emilia was founded to eliminate the stress of student housing search. Located at Viale della Rimembranza 2, Torino, Italy, we provide premium, fully managed residences located within minutes of Italy’s most prestigious academic institutions.",
+        "IT": "Studentato Emilia nasce per azzerare la complessità nella ricerca di alloggi universitari. Situato in Viale della Rimembranza 2 a Torino, Italia, offriamo residenze moderne e gestite a pochi minuti dagli atenei."
+      },
+      "paragraph2": {
+        "EN": "With high-speed fiber internet, transparent all-inclusive bills, study lounges, and an inclusive international community, we make your stay at Studentato Emilia Torino seamless and enjoyable.",
+        "IT": "Con Wi-Fi fibra ad alta velocità, utenze trasparenti tutto incluso, aule studio e una community internazionale accogliente, rendiamo indimenticabile la tua esperienza a Torino."
+      },
+      "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
+      "socialProofRating": {
+        "EN": "4.9 / 5.0 Average Satisfaction",
+        "IT": "Valutazione Media 4.9 / 5.0"
+      },
+      "socialProofDesc": {
+        "EN": "Based on verified student reviews from Politecnico di Torino, UniTO, and IAAD residents.",
+        "IT": "Basato su recensioni verificate di studenti del Politecnico di Torino, UniTO e IAAD."
+      },
+      "stats": [
+        {
+          "val": "12+",
+          "label": {
+            "EN": "Verified Suites",
+            "IT": "Suite Verificate"
+          }
+        },
+        {
+          "val": "280+",
+          "label": {
+            "EN": "Happy Student Residents",
+            "IT": "Studenti Ospitati"
+          }
+        },
+        {
+          "val": "5 mins",
+          "label": {
+            "EN": "Average Campus Distance",
+            "IT": "Distanza Media Campus"
+          }
+        },
+        {
+          "val": "98%",
+          "label": {
+            "EN": "Satisfaction Rate",
+            "IT": "Tasso di Soddisfazione"
+          }
+        }
+      ]
+    },
+    "offers": {
+      "eyebrow": {
+        "EN": "SPECIAL OFFERS",
+        "IT": "OFFERTE SPECIALI"
+      },
+      "titleHighlight": {
+        "EN": "Last Minute",
+        "IT": "Offerta Last Minute,"
+      },
+      "titleSub": {
+        "EN": "Deals, 15% Off",
+        "IT": "Sconto 15%"
+      },
+      "desc": {
+        "EN": "Book your room for the upcoming academic semester before the deadline and claim an instant 15% discount on your first month rent.",
+        "IT": "Prenota la tua camera per il prossimo semestre accademico prima della scadenza e riscatta lo sconto del 15% sul primo mese."
+      },
+      "promoCode": "EMILIA15",
+      "badgeText": "LIMITED AVAILABILITY",
+      "image": "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=1000&q=80"
+    },
+    "services": {
+      "eyebrow": {
+        "EN": "WHY CHOOSE US",
+        "IT": "PERCHÉ SCEGLIERCI"
+      },
+      "titleHighlight": {
+        "EN": "Stay Different,",
+        "IT": "Scegli La Differenza,"
+      },
+      "titleSub": {
+        "EN": "Stay Studentato Emilia",
+        "IT": "Scegli Studentato Emilia"
+      },
+      "subtitle": {
+        "EN": "We combine the freedom of independent living with the security and amenities of a full-service student residence.",
+        "IT": "Combiniamo la libertà di un alloggio indipendente con la sicurezza e i servizi di una residenza universitaria completa."
+      },
+      "showcaseImage": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80"
+    }
+  },
+  "theme": {
+    "primaryColor": "#FA5C38",
+    "secondaryColor": "#FFC83B",
+    "backgroundColor": "#FFF8F0",
+    "topbarColor": "#18181B",
+    "footerColor": "#09090B",
+    "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
+    "defaultDesktopVersion": "v1",
+    "defaultLanguage": "EN",
+    "customCss": ""
+  },
+  "roles": [
+    {
+      "id": "super_admin",
+      "name": "Super Admin",
+      "badgeColor": "#FA5C38",
+      "description": "Full access to all CMS modules, theme customization, and role/user permissions.",
+      "isSystem": true,
+      "permissions": {
+        "canManageRooms": true,
+        "canEditContent": true,
+        "canManageReviewsFaq": true,
+        "canCustomizeTheme": true,
+        "canManageRolesUsers": true
+      }
+    },
+    {
+      "id": "editor",
+      "name": "Content Editor",
+      "badgeColor": "#3B82F6",
+      "description": "Can edit website texts, rooms, reviews, FAQs, and theme, but cannot modify roles or users.",
+      "isSystem": false,
+      "permissions": {
+        "canManageRooms": true,
+        "canEditContent": true,
+        "canManageReviewsFaq": true,
+        "canCustomizeTheme": true,
+        "canManageRolesUsers": false
+      }
+    },
+    {
+      "id": "room_manager",
+      "name": "Room & Booking Manager",
+      "badgeColor": "#10B981",
+      "description": "Dedicated to managing room catalog, pricing, availability, and student reviews.",
+      "isSystem": false,
+      "permissions": {
+        "canManageRooms": true,
+        "canEditContent": false,
+        "canManageReviewsFaq": true,
+        "canCustomizeTheme": false,
+        "canManageRolesUsers": false
+      }
+    },
+    {
+      "id": "viewer",
+      "name": "Viewer / Auditor",
+      "badgeColor": "#71717A",
+      "description": "Read-only access to inspect CMS data without permission to modify or publish changes.",
+      "isSystem": false,
+      "permissions": {
+        "canManageRooms": false,
+        "canEditContent": false,
+        "canManageReviewsFaq": false,
+        "canCustomizeTheme": false,
+        "canManageRolesUsers": false
+      }
+    }
+  ],
+  "users": [
+    {
+      "id": "user-1",
+      "name": "Admin Utama",
+      "email": "admin@studentatoemilia.it",
+      "roleId": "super_admin",
+      "pin": "1234",
+      "active": true
+    },
+    {
+      "id": "user-2",
+      "name": "Marco (Content Editor)",
+      "email": "editor@studentatoemilia.it",
+      "roleId": "editor",
+      "pin": "1111",
+      "active": true
+    },
+    {
+      "id": "user-3",
+      "name": "Elena (Room Manager)",
+      "email": "rooms@studentatoemilia.it",
+      "roleId": "room_manager",
+      "pin": "2222",
+      "active": true
+    },
+    {
+      "id": "user-4",
+      "name": "Staff Auditor (Read-Only)",
+      "email": "viewer@studentatoemilia.it",
+      "roleId": "viewer",
+      "pin": "0000",
+      "active": true
+    }
+  ]
+}
